@@ -7,6 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Name :" HorizontalAlignment="Left" Margin="55,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="Faculty :" HorizontalAlignment="Left" Margin="55,93,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038"/>
+        <Label Content="Department :" HorizontalAlignment="Left" Margin="55,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115"/>
+        <Label Content="Center :" HorizontalAlignment="Left" Margin="55,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038"/>
+        <Label Content="Building :" HorizontalAlignment="Left" Margin="55,186,0,0" VerticalAlignment="Top"/>
+        <Label Content="Level :" HorizontalAlignment="Left" Margin="55,217,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rank :" HorizontalAlignment="Left" Margin="55,248,0,0" VerticalAlignment="Top"/>
+        <Label Content="Employee ID :" HorizontalAlignment="Left" Margin="55,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.154"/>
+        <TextBox x:Name="emp_id_txtbx"  HorizontalAlignment="Left" Height="23" Margin="174,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="name_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="rank_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="level_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="building_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="center_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="dept_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="faculty_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="add_btn" Content="Add" HorizontalAlignment="Left" Margin="55,314,0,0" VerticalAlignment="Top" Width="75" Click="add_btn_Click"/>
+
     </Grid>
 </Window>

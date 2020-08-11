@@ -1,0 +1,6 @@
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\BBTG.Entities\bin\Debug\BBTG.Entities.dll
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\BBTG.Entities\bin\Debug\BBTG.Entities.pdb
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\BBTG.Entities\obj\Debug\BBTG.Entities.csprojAssemblyReference.cache
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\BBTG.Entities\obj\Debug\BBTG.Entities.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\BBTG.Entities\obj\Debug\BBTG.Entities.dll
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\BBTG.Entities\obj\Debug\BBTG.Entities.pdb
