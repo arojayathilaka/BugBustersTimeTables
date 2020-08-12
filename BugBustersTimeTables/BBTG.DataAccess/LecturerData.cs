@@ -17,21 +17,36 @@ namespace BBTG.DataAccess
     {
         public List<LecturerEntity> LoadLecturerData()
         {
-            using (IDbConnection con = new SQLiteConnection(ConfigurationManager.ConnectionStrings["Default"].ConnectionString))
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
-                return con.Query<LecturerEntity>("SELECT * FROM Lecturer", new DynamicParameters()).ToList();
+                try
+                {
+
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("SELECT");
+                    sb.AppendLine("*");
+                    sb.AppendLine("FROM");
+                    sb.AppendLine("Lecturer");
+
+                    return con.Query<LecturerEntity>(sb.ToString(), new DynamicParameters()).ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    return new List<LecturerEntity>();
+                }
             }
         }
 
         public void SaveLecturerData(LecturerEntity lecturer)
         {
-            using (IDbConnection con = new SQLiteConnection(ConfigurationManager.ConnectionStrings["Default"].ConnectionString))
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try{
                     con.Execute("INSERT INTO Lecturer (EmployeeId, Name, Faculty, Department, Center, Building, Level, Rank) values (@EmployeeId, @Name, @Faculty, @Department, @Center, @Building, @Level, @Rank)", lecturer);
-                } catch(SQLiteException e)
+                } catch(SQLiteException ex)
                 {
-                    MessageBox.Show("Failed to add lecturer!");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

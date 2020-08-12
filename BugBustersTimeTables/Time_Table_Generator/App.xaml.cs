@@ -9,9 +9,11 @@ using System.Windows;
 namespace Time_Table_Generator
 {
     /// <summary>
+    /// App Start
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
+       StartUp appStrat = new StartUp();
     }
 }
