@@ -23,5 +23,15 @@ namespace Time_Table_Generator.ViewModel
         {
             _lecturerData.SaveLecturerData(lecturer);
         }
+
+        public void UpdateData(LecturerEntity lecturer)
+        {
+            _lecturerData.UpdateLecturerData(lecturer);
+        }
+
+        public void DeleteData(int lecturerId)
+        {
+            _lecturerData.DeleteLecturerData(lecturerId);
+        }
     }
 }

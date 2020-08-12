@@ -5,30 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Time_Table_Generator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="567.526" Width="1045.877">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="6*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Name :" HorizontalAlignment="Left" Margin="55,62,0,0" VerticalAlignment="Top"/>
-        <Label Content="Faculty :" HorizontalAlignment="Left" Margin="55,93,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038"/>
-        <Label Content="Department :" HorizontalAlignment="Left" Margin="55,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115"/>
-        <Label Content="Center :" HorizontalAlignment="Left" Margin="55,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038"/>
-        <Label Content="Building :" HorizontalAlignment="Left" Margin="55,186,0,0" VerticalAlignment="Top"/>
-        <Label Content="Level :" HorizontalAlignment="Left" Margin="55,217,0,0" VerticalAlignment="Top"/>
-        <Label Content="Rank :" HorizontalAlignment="Left" Margin="55,248,0,0" VerticalAlignment="Top"/>
-        <Label Content="Employee ID :" HorizontalAlignment="Left" Margin="55,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.154"/>
-        <TextBox x:Name="emp_id_txtbx"  HorizontalAlignment="Left" Height="23" Margin="174,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="name_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,66,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="rank_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="level_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="building_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="center_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="dept_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="faculty_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="add_btn" Content="Add" HorizontalAlignment="Left" Margin="55,314,0,0" VerticalAlignment="Top" Width="75" Click="add_btn_Click"/>
-        <DataGrid x:Name="lecture_data_grid" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="239" Margin="309,35,0,0" VerticalAlignment="Top" Width="419" SelectionChanged="lecture_data_grid_SelectionChanged"/>
+        <Frame Content="" Name="Main" HorizontalAlignment="Left" Height="537" Margin="248,0,0,0" VerticalAlignment="Top" Width="790"/>
+        <DockPanel HorizontalAlignment="Left" Height="537" LastChildFill="False" VerticalAlignment="Top" Width="243" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+            <Button Content="Button" Height="51" VerticalAlignment="Top" Width="244" Click="Button_Click"/>
+        </DockPanel>
 
     </Grid>
 </Window>

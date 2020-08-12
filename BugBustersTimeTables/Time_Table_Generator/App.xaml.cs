@@ -14,6 +14,6 @@ namespace Time_Table_Generator
     /// </summary>
     public partial class App : Application
     {
-       StartUp appStrat = new StartUp();
+       StartUp appStart = new StartUp();
     }
 }

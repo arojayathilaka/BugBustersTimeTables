@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="LecAddWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+
     </Grid>
 </Window>
