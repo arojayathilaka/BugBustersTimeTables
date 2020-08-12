@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BugBustersTimeTables",
+    "\\BugBustersTimeTables\\BBTG.DataAccess",
+    "\\BugBustersTimeTables\\BBTG.Entities",
+    "\\BugBustersTimeTables\\BBTG.Entities\\Data",
+    "\\BugBustersTimeTables\\Time_Table_Generator",
+    "\\BugBustersTimeTables\\Time_Table_Generator\\ViewModel"
+  ],
+  "SelectedNode": "\\BugBustersTimeTables\\Time_Table_Generator\\MainWindow.xaml.cs",
+  "PreviewInSolutionExplorer": false
+}

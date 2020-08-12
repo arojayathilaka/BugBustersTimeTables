@@ -28,6 +28,7 @@
         <TextBox x:Name="dept_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="faculty_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="add_btn" Content="Add" HorizontalAlignment="Left" Margin="55,314,0,0" VerticalAlignment="Top" Width="75" Click="add_btn_Click"/>
+        <DataGrid x:Name="lecture_data_grid" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="239" Margin="309,35,0,0" VerticalAlignment="Top" Width="419" SelectionChanged="lecture_data_grid_SelectionChanged"/>
 
     </Grid>
 </Window>

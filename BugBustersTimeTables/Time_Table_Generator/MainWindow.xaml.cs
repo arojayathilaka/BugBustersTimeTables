@@ -1,6 +1,7 @@
 ﻿using BBTG.Entities.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,8 @@ namespace Time_Table_Generator
         {
             InitializeComponent();
             _viewModel = new LecturerViewModel();
-            var x = _viewModel.LoadData();
-
+            // var x = _viewModel.LoadData();
+            lecture_data_grid.ItemsSource = _viewModel.LoadData();
             //_viewModel.SaveData();
             //lecturerEntity = new LecturerEntity(4, "A", "S", "J", "H", "J", 3, 2);
             //_viewModel.SaveData(lecturerEntity);
@@ -50,6 +51,38 @@ namespace Time_Table_Generator
             
             lecturerEntity = new LecturerEntity(EmployeeId, Name, Faculty, Department, Center, Building, Level, Rank);
             _viewModel.SaveData(lecturerEntity);
+            lecture_data_grid.ItemsSource = _viewModel.LoadData();
+        }
+
+        private void lecture_data_grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //datagrid datagrid = sender as datagrid;
+            //datarowview datarowview = datagrid.selecteditem as datarowview;
+
+
+            //emp_id_txtbx.Text = dataRowView["EmployeeId"].ToString();
+            //name_txtbx.Text = dataRowView["Name"].ToString();
+            //faculty_txtbx.Text = dataRowView["Faculty"].ToString();
+            //dept_txtbx.Text = dataRowView["Department"].ToString();
+            //center_txtbx.Text = dataRowView["Center"].ToString();
+            //building_txtbx.Text = dataRowView["Building"].ToString();
+            //level_txtbx.Text = dataRowView["Level"].ToString();
+            //rank_txtbx.Text = dataRowView["Rank"].ToString();
+
+            DataGrid dataGrid = (DataGrid)sender;
+            LecturerEntity lecturer = dataGrid.SelectedItem as LecturerEntity;
+
+            if (lecturer != null)
+            {
+                emp_id_txtbx.Text = lecturer.EmployeeId.ToString();
+                name_txtbx.Text = lecturer.Name;
+                faculty_txtbx.Text = lecturer.Faculty;
+                dept_txtbx.Text = lecturer.Department;
+                center_txtbx.Text = lecturer.Center;
+                building_txtbx.Text = lecturer.Building;
+                level_txtbx.Text = lecturer.Level.ToString();
+                rank_txtbx.Text = lecturer.Rank.ToString();
+            }
         }
     }
 }

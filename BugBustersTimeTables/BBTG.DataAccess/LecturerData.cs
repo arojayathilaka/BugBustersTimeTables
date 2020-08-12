@@ -9,6 +9,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Configuration;
+using System.Windows;
 
 namespace BBTG.DataAccess
 {
@@ -26,7 +27,12 @@ namespace BBTG.DataAccess
         {
             using (IDbConnection con = new SQLiteConnection(ConfigurationManager.ConnectionStrings["Default"].ConnectionString))
             {
-                con.Execute("INSERT INTO Lecturer (employeeId, name, faculty, department, center, building, level, rank) values (@EmployeeId, @Name, @Faculty, @Department, @Center, @Building, @Level, @Rank)", lecturer);
+                try{
+                    con.Execute("INSERT INTO Lecturer (EmployeeId, Name, Faculty, Department, Center, Building, Level, Rank) values (@EmployeeId, @Name, @Faculty, @Department, @Center, @Building, @Level, @Rank)", lecturer);
+                } catch(SQLiteException e)
+                {
+                    MessageBox.Show("Failed to add lecturer!");
+                }
             }
         }
     }

@@ -32,3 +32,5 @@ C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\Time_Table_
 C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\Time_Table_Generator\obj\Debug\Time_Table_Generator.csproj.CopyComplete
 C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\Time_Table_Generator\obj\Debug\Time_Table_Generator.exe
 C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\Time_Table_Generator\obj\Debug\Time_Table_Generator.pdb
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\Time_Table_Generator\obj\Debug\LecAddWindow.g.cs
+C:\Users\ACER\source\repos\BugBustersTimeTables\BugBustersTimeTables\Time_Table_Generator\obj\Debug\LecAddWindow.baml
