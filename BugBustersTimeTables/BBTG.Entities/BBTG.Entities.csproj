@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\BuildingEntity.cs" />
+    <Compile Include="Data\CenterEntity.cs" />
+    <Compile Include="Data\DepartmentEntity.cs" />
+    <Compile Include="Data\FacultyEntity.cs" />
     <Compile Include="Data\LecturerEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

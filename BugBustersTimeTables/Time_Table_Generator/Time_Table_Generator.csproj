@@ -91,18 +91,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="LecAddWindow.xaml.cs">
-      <DependentUpon>LecAddWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StartUp.cs" />
+    <Compile Include="ViewModel\BuildingViewModel.cs" />
+    <Compile Include="ViewModel\CenterViewModel.cs" />
+    <Compile Include="ViewModel\DepartmentViewModel.cs" />
+    <Compile Include="ViewModel\FacultyViewModel.cs" />
     <Compile Include="ViewModel\LecturerViewModel.cs" />
-    <Compile Include="View\LectureView.xaml.cs">
-      <DependentUpon>LectureView.xaml</DependentUpon>
+    <Compile Include="View\LecturerView.xaml.cs">
+      <DependentUpon>LecturerView.xaml</DependentUpon>
     </Compile>
-    <Page Include="LecAddWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,7 +112,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\LectureView.xaml">
+    <Page Include="View\LecturerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,7 +135,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="BBTG.db">
+    <Content Include="DataBase\BBTG.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />

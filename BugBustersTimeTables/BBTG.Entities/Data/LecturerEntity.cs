@@ -15,6 +15,11 @@ namespace BBTG.Entities.Data
         public int Level { get; set; }
         public double Rank { get; set; }
 
+        public LecturerEntity()
+        {
+
+        }
+
         public LecturerEntity(int EmployeeId, string Name, string Faculty, string Department, string Center, string Building, int Level, double Rank)
         {
             this.EmployeeId = EmployeeId;
@@ -25,11 +30,6 @@ namespace BBTG.Entities.Data
             this.Building = Building;
             this.Level = Level;
             this.Rank = Rank;
-        }
-
-        public LecturerEntity()
-        {
-
-        }
+        }      
     }
 }

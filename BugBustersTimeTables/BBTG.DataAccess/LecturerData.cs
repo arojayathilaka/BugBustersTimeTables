@@ -13,7 +13,7 @@ namespace BBTG.DataAccess
 {
     public class LecturerData
     {
-        public List<LecturerEntity> LoadLecturerData()
+        public List<LecturerEntity> LoadData()
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -36,7 +36,7 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void UpdateLecturerData(LecturerEntity lecturer)
+        public void UpdateData(LecturerEntity lecturer)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -51,7 +51,7 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void SaveLecturerData(LecturerEntity lecturer)
+        public void SaveData(LecturerEntity lecturer)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -64,7 +64,7 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void DeleteLecturerData(int lecturerId)
+        public void DeleteData(int lecturerId)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {

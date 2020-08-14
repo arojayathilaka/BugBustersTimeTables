@@ -39,7 +39,7 @@ namespace Time_Table_Generator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Lecture();
+            Main.Content = new LecturerView();
         }
 
         //private void add_btn_Click(object sender, RoutedEventArgs e)

@@ -14,24 +14,24 @@ namespace Time_Table_Generator.ViewModel
             _lecturerData = new LecturerData();
         }
 
-        public List<LecturerEntity> LoadData()
+        public List<LecturerEntity> LoadLecturerData()
         {
-            return _lecturerData.LoadLecturerData();
+            return _lecturerData.LoadData();
         }
 
-        public void SaveData(LecturerEntity lecturer)
+        public void SaveLecturerData(LecturerEntity lecturer)
         {
-            _lecturerData.SaveLecturerData(lecturer);
+            _lecturerData.SaveData(lecturer);
         }
 
-        public void UpdateData(LecturerEntity lecturer)
+        public void UpdateLecturerData(LecturerEntity lecturer)
         {
-            _lecturerData.UpdateLecturerData(lecturer);
+            _lecturerData.UpdateData(lecturer);
         }
 
-        public void DeleteData(int lecturerId)
+        public void DeleteLecturerData(int lecturerId)
         {
-            _lecturerData.DeleteLecturerData(lecturerId);
+            _lecturerData.DeleteData(lecturerId);
         }
     }
 }
