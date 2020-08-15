@@ -32,6 +32,7 @@ namespace Time_Table_Generator.View
 
         bool updateMode = false;
         Regex empIdRegex = new Regex(@"\b\d{6}\b");
+        List<int> lecturerIds = new List<int>();
 
         public LecturerView()
         {
@@ -46,11 +47,17 @@ namespace Time_Table_Generator.View
             _facultyViewModel = new FacultyViewModel();
             _departmentViewModel = new DepartmentViewModel();
 
-            lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerData();           
+            List<LecturerEntity> lecturers = _lecturerViewModel.LoadLecturerData();
+            lecturer_data_grid.ItemsSource = lecturers;           
             center_combobx.ItemsSource = _centerViewModel.LoadCenterData();
             building_combobx.ItemsSource =  _buildingViewModel.LoadBuildingData();
             faculty_combobx.ItemsSource = _facultyViewModel.LoadFacultyData();
             department_combobx.ItemsSource = _departmentViewModel.LoadDepartmentData();
+
+            foreach(LecturerEntity l in lecturers)
+            {
+                lecturerIds.Add(l.EmployeeId);
+            }
 
             add_btn_.IsEnabled = false;
             update_btn_.IsEnabled = false;
@@ -90,18 +97,23 @@ namespace Time_Table_Generator.View
 
         private void delete_btn__Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                int EmployeeId = int.Parse(emp_id_txtbx.Text);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete?", "", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
 
-                _lecturerViewModel.DeleteLecturerData(EmployeeId);
-                lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerData();
-                ClearAll();
-            }
-            catch (Exception ex)
+            if(result == MessageBoxResult.Yes)
             {
-                MessageBox.Show(ex.Message);
-            }         
+                try
+                {
+                    int EmployeeId = int.Parse(emp_id_txtbx.Text);
+
+                    _lecturerViewModel.DeleteLecturerData(EmployeeId);
+                    lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerData();
+                    ClearAll();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void ClearAll()
@@ -150,7 +162,7 @@ namespace Time_Table_Generator.View
                 building_combobx.Text = lecturer.Building;
                 level_combobx.Text = lecturer.Level.ToString();
                 rank_txtbx.Text = lecturer.Rank.ToString();
-                emp_id_txtbx.IsEnabled = false;    
+                emp_id_txtbx.IsEnabled = false;     
             }
         }
 
@@ -177,34 +189,46 @@ namespace Time_Table_Generator.View
 
         private void CheckValidations()
         {
-           // Regex rankRegex = new Regex(@"^[0-9]*\.[0-9]{6}$");
-            if (
-                !String.IsNullOrEmpty(emp_id_txtbx.Text) &&
-                !String.IsNullOrEmpty(name_txtbx.Text) &&
-                !String.IsNullOrEmpty(faculty_combobx.Text) &&
-                !String.IsNullOrEmpty(department_combobx.Text) &&
-                !String.IsNullOrEmpty(center_combobx.Text) &&
-                !String.IsNullOrEmpty(building_combobx.Text) &&              
-                !String.IsNullOrEmpty(rank_txtbx.Text) &&
-                empIdRegex.IsMatch(emp_id_txtbx.Text) 
-                //rankRegex.IsMatch(rank_txtbx.Text)
-                )
+            // Regex rankRegex = new Regex(@"^[0-9]*\.[0-9]{6}$");
+            if (updateMode)
             {
-                if (updateMode)
+                if (
+                    emp_id_txtbx.Text != "Eg: 000150" &&
+                    empIdRegex.IsMatch(emp_id_txtbx.Text) &&
+                    !String.IsNullOrEmpty(emp_id_txtbx.Text) &&
+                    !String.IsNullOrEmpty(name_txtbx.Text) &&
+                    !String.IsNullOrEmpty(faculty_combobx.Text) &&
+                    !String.IsNullOrEmpty(department_combobx.Text) &&
+                    !String.IsNullOrEmpty(center_combobx.Text) &&
+                    !String.IsNullOrEmpty(building_combobx.Text) &&
+                    !String.IsNullOrEmpty(rank_txtbx.Text)
+                )
                 {
                     update_btn_.IsEnabled = true;
-                } else
-                {
-                    add_btn_.IsEnabled = true;
-                }
-            } else
-            {
-                if (updateMode)
-                {
-                    update_btn_.IsEnabled = false;
                 }
                 else
                 {
+                    update_btn_.IsEnabled = false;
+                }
+            } else
+            {
+                if (
+                    emp_id_txtbx.Text != "Eg: 000150" &&
+                    empIdRegex.IsMatch(emp_id_txtbx.Text) &&
+                    !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)) &&
+                    !String.IsNullOrEmpty(emp_id_txtbx.Text) &&
+                    !String.IsNullOrEmpty(name_txtbx.Text) &&
+                    !String.IsNullOrEmpty(faculty_combobx.Text) &&
+                    !String.IsNullOrEmpty(department_combobx.Text) &&
+                    !String.IsNullOrEmpty(center_combobx.Text) &&
+                    !String.IsNullOrEmpty(building_combobx.Text) &&
+                    !String.IsNullOrEmpty(rank_txtbx.Text)
+                )
+                {
+                    add_btn_.IsEnabled = true;
+                }
+                else 
+                { 
                     add_btn_.IsEnabled = false;
                 }
             }
@@ -214,7 +238,7 @@ namespace Time_Table_Generator.View
         {
             CheckValidations();
 
-            if (empIdRegex.IsMatch(emp_id_txtbx.Text) && level_combobx.Text != "")
+            if (empIdRegex.IsMatch(emp_id_txtbx.Text) && level_combobx.Text != "" && emp_id_txtbx.Text != "Eg: 000150" && !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)))
             {
                 rank_txtbx.Text = level_combobx.Text + "." + emp_id_txtbx.Text;
             }
@@ -252,7 +276,7 @@ namespace Time_Table_Generator.View
             if(item != null)
             {
                 string level = item.Content.ToString();
-                if (empIdRegex.IsMatch(emp_id_txtbx.Text))
+                if (empIdRegex.IsMatch(emp_id_txtbx.Text) && emp_id_txtbx.Text != "Eg: 000150" && !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)))
                 {
                     rank_txtbx.Text = level + "." + emp_id_txtbx.Text;
                 }
@@ -266,7 +290,7 @@ namespace Time_Table_Generator.View
 
         private void emp_id_txtbx_GotFocus(object sender, RoutedEventArgs e)
         {
-            emp_id_txtbx.Text = "";
+            if(emp_id_txtbx.Text == "Eg: 000150") emp_id_txtbx.Text = "";
         }
     }
 }
