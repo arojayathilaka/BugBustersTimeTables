@@ -28,7 +28,8 @@ namespace Time_Table_Generator.View
         BuildingViewModel _buildingViewModel;
         FacultyViewModel _facultyViewModel;
         DepartmentViewModel _departmentViewModel;
-        LecturerEntity lecturerEntity;
+        LecturerEntity lecturer;
+        string level;
 
         bool updateMode = false;
         Regex empIdRegex = new Regex(@"\b\d{6}\b");
@@ -39,7 +40,7 @@ namespace Time_Table_Generator.View
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Lecturer_Page_Loaded(object sender, RoutedEventArgs e)
         {
             _lecturerViewModel = new LecturerViewModel();
             _centerViewModel = new CenterViewModel();
@@ -69,8 +70,9 @@ namespace Time_Table_Generator.View
         {
             try
             {
-                lecturerEntity = CreateLecturerEntity();
-                _lecturerViewModel.SaveLecturerData(lecturerEntity);
+                lecturer = CreateLecturerEntity();
+                lecturerIds.Add(lecturer.EmployeeId);
+                _lecturerViewModel.SaveLecturerData(lecturer);
                 lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerData();
                 ClearAll();
             }
@@ -84,8 +86,8 @@ namespace Time_Table_Generator.View
         {
             try
             {
-                lecturerEntity = CreateLecturerEntity();
-                _lecturerViewModel.UpdateLecturerData(lecturerEntity);
+                lecturer = CreateLecturerEntity();
+                _lecturerViewModel.UpdateLecturerData(lecturer);
                 lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerData();
                 ClearAll();
             }
@@ -97,7 +99,7 @@ namespace Time_Table_Generator.View
 
         private void delete_btn__Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete?", "", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete?", "BBTG", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
 
             if(result == MessageBoxResult.Yes)
             {
@@ -183,16 +185,16 @@ namespace Time_Table_Generator.View
             double Rank = double.Parse(rank_txtbx.Text);
 
 
-            lecturerEntity = new LecturerEntity(EmployeeId, Name, Faculty, Department, Center, Building, Level, Rank);
-            return lecturerEntity;
+            lecturer = new LecturerEntity(EmployeeId, Name, Faculty, Department, Center, Building, Level, Rank);
+            return lecturer;
         }
 
         private void CheckValidations()
         {
             // Regex rankRegex = new Regex(@"^[0-9]*\.[0-9]{6}$");
-            if (updateMode)
-            {
+            
                 if (
+                    updateMode &&
                     emp_id_txtbx.Text != "Eg: 000150" &&
                     empIdRegex.IsMatch(emp_id_txtbx.Text) &&
                     !String.IsNullOrEmpty(emp_id_txtbx.Text) &&
@@ -201,6 +203,7 @@ namespace Time_Table_Generator.View
                     !String.IsNullOrEmpty(department_combobx.Text) &&
                     !String.IsNullOrEmpty(center_combobx.Text) &&
                     !String.IsNullOrEmpty(building_combobx.Text) &&
+                    !String.IsNullOrEmpty(level) &&
                     !String.IsNullOrEmpty(rank_txtbx.Text)
                 )
                 {
@@ -210,9 +213,9 @@ namespace Time_Table_Generator.View
                 {
                     update_btn_.IsEnabled = false;
                 }
-            } else
-            {
+            
                 if (
+                    !updateMode &&
                     emp_id_txtbx.Text != "Eg: 000150" &&
                     empIdRegex.IsMatch(emp_id_txtbx.Text) &&
                     !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)) &&
@@ -222,6 +225,7 @@ namespace Time_Table_Generator.View
                     !String.IsNullOrEmpty(department_combobx.Text) &&
                     !String.IsNullOrEmpty(center_combobx.Text) &&
                     !String.IsNullOrEmpty(building_combobx.Text) &&
+                    !String.IsNullOrEmpty(level) &&
                     !String.IsNullOrEmpty(rank_txtbx.Text)
                 )
                 {
@@ -231,7 +235,7 @@ namespace Time_Table_Generator.View
                 { 
                     add_btn_.IsEnabled = false;
                 }
-            }
+            
         }
 
         private void emp_id_txtbx_TextChanged(object sender, TextChangedEventArgs e)
@@ -275,8 +279,12 @@ namespace Time_Table_Generator.View
             ComboBoxItem item = level_combobx.SelectedItem as ComboBoxItem;
             if(item != null)
             {
-                string level = item.Content.ToString();
-                if (empIdRegex.IsMatch(emp_id_txtbx.Text) && emp_id_txtbx.Text != "Eg: 000150" && !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)))
+                level = item.Content.ToString();
+                if (empIdRegex.IsMatch(emp_id_txtbx.Text) && emp_id_txtbx.Text != "Eg: 000150" && !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)) && !updateMode)
+                {
+                    rank_txtbx.Text = level + "." + emp_id_txtbx.Text;
+                }
+                if (empIdRegex.IsMatch(emp_id_txtbx.Text) && emp_id_txtbx.Text != "Eg: 000150" && updateMode)
                 {
                     rank_txtbx.Text = level + "." + emp_id_txtbx.Text;
                 }

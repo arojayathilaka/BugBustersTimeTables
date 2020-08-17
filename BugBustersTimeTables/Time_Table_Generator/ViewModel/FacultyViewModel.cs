@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Time_Table_Generator.ViewModel
 {
-    public class FacultyViewModel
+    internal class FacultyViewModel
     {
         FacultyData _facultyData;
         public FacultyViewModel()
