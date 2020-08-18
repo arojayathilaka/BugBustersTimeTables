@@ -5,9 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Time_Table_Generator"
         mc:Ignorable="d"
-        Title="BBTG" Height="600" Width="1050" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}">
+        Title="BBTG" Height="600" Width="1050">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFF98008"/>
+            <GradientStop Color="#FFE8E0D4" Offset="0.421"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <StackPanel Orientation="Horizontal" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
             <Button x:Name="lecturer_btn" Content="Lecturers" MinWidth="100" Click="lecturer_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/images.jpg"/>

@@ -8,7 +8,13 @@
       d:DesignHeight="450" d:DesignWidth="1100"
       Title="SubjectView" Loaded="Subject_Page_Loaded">
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FFFF9604"/>
+                <GradientStop Color="White" Offset="0.069"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label Content="Subject Code :" HorizontalAlignment="Left" Margin="51,77,0,0" VerticalAlignment="Top"/>
         <Label Content="Year :" HorizontalAlignment="Left" Margin="51,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038"/>
         <Label Content="Semester :" HorizontalAlignment="Left" Margin="51,164,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115"/>

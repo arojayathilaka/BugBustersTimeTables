@@ -8,27 +8,37 @@
       d:DesignHeight="450" d:DesignWidth="1100"
       Title="LecturerView" Loaded="Lecturer_Page_Loaded">
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="349*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF98008"/>
+                <GradientStop Color="White" Offset="0.108"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <!--<Grid.ColumnDefinitions>-->
         <!--<ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="6*"/>-->
         <!--</Grid.ColumnDefinitions>-->
-        <Label Content="Name :" HorizontalAlignment="Left" Margin="51,74,0,0" VerticalAlignment="Top" Foreground="#FF213483"/>
-        <Label Content="Faculty :" HorizontalAlignment="Left" Margin="51,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038" Foreground="#FF213483"/>
-        <Label Content="Department :" HorizontalAlignment="Left" Margin="51,162,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115" Foreground="#FF213483"/>
-        <Label Content="Center :" HorizontalAlignment="Left" Margin="51,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038" Foreground="#FF213483"/>
-        <Label Content="Building :" HorizontalAlignment="Left" Margin="51,252,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.466,0.077" Foreground="#FF213483"/>
-        <Label Content="Level :" HorizontalAlignment="Left" Margin="51,293,0,0" VerticalAlignment="Top" Foreground="#FF213483"/>
-        <Label Content="Rank :" HorizontalAlignment="Left" Margin="51,340,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,2.288" Foreground="#FF213483"/>
-        <Label Content="Employee ID :" HorizontalAlignment="Left" Margin="51,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.154" Foreground="#FF213483"/>
+        <Label Content="Name :" HorizontalAlignment="Left" Margin="51,74,0,0" VerticalAlignment="Top" Foreground="#FF213483" FontSize="14"/>
+        <Label Content="Faculty :" HorizontalAlignment="Left" Margin="51,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038" Foreground="#FF213483" FontSize="14"/>
+        <Label Content="Department :" HorizontalAlignment="Left" Margin="51,162,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115" Foreground="#FF213483" FontSize="14"/>
+        <Label Content="Center :" HorizontalAlignment="Left" Margin="51,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038" Foreground="#FF213483" FontSize="14"/>
+        <Label Content="Building :" HorizontalAlignment="Left" Margin="51,252,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.466,0.077" Foreground="#FF213483" FontSize="14"/>
+        <Label Content="Level :" HorizontalAlignment="Left" Margin="51,293,0,0" VerticalAlignment="Top" Foreground="#FF213483" FontSize="14"/>
+        <Label Content="Rank :" HorizontalAlignment="Left" Margin="51,340,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,2.288" Foreground="#FF213483" FontSize="14"/>
+        <Label Content="Employee ID :" HorizontalAlignment="Left" Margin="51,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.154" Foreground="#FF213483" FontSize="14"/>
         <TextBox x:Name="emp_id_txtbx"  HorizontalAlignment="Left" Height="23" Margin="174,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="120" TextChanged="emp_id_txtbx_TextChanged" GotFocus="emp_id_txtbx_GotFocus" Foreground="#FF213483" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}"/>
         <TextBox x:Name="name_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  MinWidth="120" TextChanged="name_txtbx_TextChanged" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483"/>
         <TextBox x:Name="rank_txtbx" HorizontalAlignment="Left" Height="23" Margin="174,340,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  MinWidth="120" TextChanged="rank_txtbx_TextChanged" IsEnabled="False" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483"/>
-        <Button x:Name="add_btn_" Content="Add" HorizontalAlignment="Left" Margin="51,410,0,0" VerticalAlignment="Top" Width="75" Click="add_btn__Click" Background="#FF1560FF" Foreground="#FF54E0FF"/>
-        <DataGrid x:Name="lecturer_data_grid" HorizontalAlignment="Left" Height="332" Margin="366,31,0,0" VerticalAlignment="Top" Width="604" SelectionChanged="lecture_data_grid_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" Foreground="#FF0B2283"/>
-        <Button x:Name="update_btn_" Content="Update" HorizontalAlignment="Left" Margin="133,410,0,0" VerticalAlignment="Top" Width="75" Click="update_btn__Click" Background="#FF1560FF" Foreground="#FF54E0FF"/>
-        <Button x:Name="delete_btn_" Content="Delete" HorizontalAlignment="Left" Margin="214,410,0,0" VerticalAlignment="Top" Width="75" Click="delete_btn__Click" RenderTransformOrigin="0.573,2.3" Background="#FF1560FF" Foreground="#FF54E0FF"/>
-        <Button x:Name="clear_all_btn_" Content="Clear" HorizontalAlignment="Left" Margin="295,410,0,0" VerticalAlignment="Top" Width="75" Click="clear_all_btn__Click" RenderTransformOrigin="0.404,0.483" Background="#FF1560FF" Foreground="#FF54E0FF"/>
+        <Button x:Name="add_btn_" Content="Add" HorizontalAlignment="Left" Margin="51,410,0,0" VerticalAlignment="Top" Width="75" Click="add_btn__Click" Background="#FF1560FF" Foreground="#FFFF9900"/>
+        <DataGrid x:Name="lecturer_data_grid" HorizontalAlignment="Left" Height="332" Margin="366,31,0,0" VerticalAlignment="Top" Width="604" SelectionChanged="lecture_data_grid_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" Foreground="#FF0B2283" Grid.ColumnSpan="2"/>
+        <Button x:Name="update_btn_" Content="Update" HorizontalAlignment="Left" Margin="133,410,0,0" VerticalAlignment="Top" Width="75" Click="update_btn__Click" Background="#FF1560FF" Foreground="#FFFF9900"/>
+        <Button x:Name="delete_btn_" Content="Delete" HorizontalAlignment="Left" Margin="214,410,0,0" VerticalAlignment="Top" Width="75" Click="delete_btn__Click" RenderTransformOrigin="0.573,2.3" Background="#FF1560FF" Foreground="#FFFF9900"/>
+        <Button x:Name="clear_all_btn_" Content="Clear" HorizontalAlignment="Left" Margin="295,410,0,0" VerticalAlignment="Top" Width="75" Click="clear_all_btn__Click" RenderTransformOrigin="0.404,0.483" Background="#FF1560FF" Foreground="#FFFF9900"/>
         <ComboBox x:Name="level_combobx" HorizontalAlignment="Left" Margin="174,293,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="level_combobx_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483">
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
