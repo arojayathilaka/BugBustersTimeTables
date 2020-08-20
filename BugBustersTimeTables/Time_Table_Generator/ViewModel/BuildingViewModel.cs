@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Time_Table_Generator.ViewModel
 {
-    public class BuildingViewModel
+    internal class BuildingViewModel
     {
         BuildingData _buildingData;
         public BuildingViewModel()

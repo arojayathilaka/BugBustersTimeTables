@@ -170,10 +170,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="WhatsApp Image 2020-08-16 at 9.03.32 PM.jpeg" />
+    <Resource Include="download %282%29.png" />
+    <Resource Include="session-icon-3.jpg" />
+    <Resource Include="Images\download %282%29.png" />
+    <Resource Include="registration-for-under-graduate-student-icon-png-free-student-icon-png-820_731.png" />
+    <Resource Include="Images\illustration-calendar-icon_53876-5588.jpg" />
+    <Resource Include="Images\days.jpg" />
+    <Resource Include="Images\location.png" />
+    <Resource Include="Images\download %281%29.png" />
+    <Resource Include="Images\download.png" />
+    <Resource Include="Images\images.jpg" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Images\calendar-30-512.png" />
+    <Resource Include="Images\3-30-512.png" />
+    <Resource Include="Images\calendar-icon-reminder-red-isolated-calender-save-date-125333466.jpg" />
     <Content Include="DataBase\BBTG.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

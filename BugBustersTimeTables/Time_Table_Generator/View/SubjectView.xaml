@@ -1,0 +1,68 @@
+﻿<Page x:Class="Time_Table_Generator.View.SubjectView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Time_Table_Generator.View"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="1100"
+      Title="SubjectView" Loaded="Subject_Page_Loaded">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FFFF9604"/>
+                <GradientStop Color="White" Offset="0.069"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Subject Code :" HorizontalAlignment="Left" Margin="51,77,0,0" VerticalAlignment="Top"/>
+        <Label Content="Year :" HorizontalAlignment="Left" Margin="51,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038"/>
+        <Label Content="Semester :" HorizontalAlignment="Left" Margin="51,164,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115"/>
+        <Label Content="No of Lecture Hours :" HorizontalAlignment="Left" Margin="51,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038"/>
+        <Label Content="No of Tutorial Hours :" HorizontalAlignment="Left" Margin="51,252,0,0" VerticalAlignment="Top"/>
+        <Label Content="No of Lab Hours :" HorizontalAlignment="Left" Margin="51,297,0,0" VerticalAlignment="Top"/>
+        <Label Content="No of Evaluation Hours :" HorizontalAlignment="Left" Margin="51,337,0,0" VerticalAlignment="Top"/>
+        <Label Content="Subject Name :" HorizontalAlignment="Left" Margin="51,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.154"/>
+        <TextBox x:Name="name_txtbx"  HorizontalAlignment="Left" Height="23" Margin="191,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="120" TextChanged="name_txtbx_TextChanged" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBox x:Name="code_txtbx" HorizontalAlignment="Left" Height="23" Margin="191,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  MinWidth="120" TextChanged="code_txtbx_TextChanged" GotFocus="code_txtbx_GotFocus" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <Button x:Name="add_btn_" Content="Add" HorizontalAlignment="Left" Margin="51,410,0,0" VerticalAlignment="Top" Width="75" Click="add_btn__Click" Background="#FF1560FF" Foreground="#FF54E0FF"/>
+        <DataGrid x:Name="subject_data_grid" HorizontalAlignment="Left" Height="328" Margin="369,35,0,0" VerticalAlignment="Top" Width="616" SelectionChanged="subject_data_grid_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}"/>
+        <Button x:Name="update_btn_" Content="Update" HorizontalAlignment="Left" Margin="133,410,0,0" VerticalAlignment="Top" Width="75" Click="update_btn__Click" Background="#FF1560FF" Foreground="#FF54E0FF"/>
+        <Button x:Name="delete_btn_" Content="Delete" HorizontalAlignment="Left" Margin="214,410,0,0" VerticalAlignment="Top" Width="75" Click="delete_btn__Click" Background="#FF1560FF" Foreground="#FF54E0FF"/>
+        <Button x:Name="clear_all_btn_" Content="Clear" HorizontalAlignment="Left" Margin="295,410,0,0" VerticalAlignment="Top" Width="75" Click="clear_all_btn__Click" Background="#FF1560FF" Foreground="#FF54E0FF"/>
+        <ComboBox x:Name="lab_combobx" HorizontalAlignment="Left" Margin="191,297,0,0" VerticalAlignment="Top"  MinWidth="120" SelectionChanged="lab_combobx_SelectionChanged">
+            <ComboBoxItem Content="0"/>
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+        </ComboBox>
+        <ComboBox x:Name="lec_combobx" HorizontalAlignment="Left" Margin="191,208,0,0" VerticalAlignment="Top" MinWidth="120" SelectionChanged="lec_combobx_SelectionChanged" Width="116">
+            <ComboBoxItem Content="0"/>
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+        </ComboBox>
+        <ComboBox x:Name="tutorial_combobx" HorizontalAlignment="Left" Margin="191,252,0,0" VerticalAlignment="Top" SelectionChanged="tutorial_combobx_SelectionChanged" Width="120">
+            <ComboBoxItem Content="0"/>
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+        </ComboBox>
+        <ComboBox x:Name="year_combobx" HorizontalAlignment="Left" Margin="191,124,0,0" VerticalAlignment="Top" MinWidth="120" SelectionChanged="year_combobx_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+        </ComboBox>
+        <ComboBox x:Name="sem_combobx" HorizontalAlignment="Left" Margin="191,164,0,0" VerticalAlignment="Top" MinWidth="120" SelectionChanged="sem_combobx_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+        </ComboBox>
+        <ComboBox x:Name="eval_combobx" HorizontalAlignment="Left" Margin="191,341,0,0" VerticalAlignment="Top" SelectionChanged="eval_combobx_SelectionChanged" Width="120">
+            <ComboBoxItem Content="0"/>
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+        </ComboBox>
+    </Grid>
+</Page>
