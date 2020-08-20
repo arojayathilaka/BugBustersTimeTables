@@ -139,6 +139,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="SLIIT_Logo_Crest.png" />
     <Resource Include="WhatsApp Image 2020-08-16 at 9.03.32 PM.jpeg" />
     <Resource Include="download %282%29.png" />
     <Resource Include="session-icon-3.jpg" />

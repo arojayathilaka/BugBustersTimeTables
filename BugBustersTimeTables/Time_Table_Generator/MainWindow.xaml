@@ -14,13 +14,8 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
+        <Image x:Name="logo" HorizontalAlignment="Left" Margin="28,1,0,0" VerticalAlignment="Top" Width="60" Height="75" Source="SLIIT_Logo_Crest.png"/>
         <StackPanel Orientation="Horizontal" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <StackPanel.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
             <Button x:Name="lecturer_btn" Content="Lecturers" MinWidth="100" Click="lecturer_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/images.jpg"/>
@@ -40,7 +35,9 @@
                 <Button.Background>
                     <ImageBrush ImageSource="Images/illustration-calendar-icon_53876-5588.jpg" Stretch="UniformToFill"/>
                 </Button.Background>
-                <TextBlock FontFamily="Sigmar One" Foreground="#FF213483">Working Days<LineBreak/><Separator Visibility="Hidden" Width="10"/>&amp; Hours</TextBlock>
+                <TextBlock FontFamily="Sigmar One" Foreground="#FF213483"><Run Text="Working Days"/><LineBreak/><InlineUIContainer>
+                        <Separator Visibility="Hidden" Width="10"/>
+                    </InlineUIContainer><Run Text="&amp; Hours"/></TextBlock>
             </Button>
             <Button x:Name="student_btn" Content="Students" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
