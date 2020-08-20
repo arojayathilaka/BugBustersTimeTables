@@ -96,13 +96,28 @@
     <Compile Include="ViewModel\CenterViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\FacultyViewModel.cs" />
+    <Compile Include="ViewModel\LecturerStatisticsViewModel.cs" />
     <Compile Include="ViewModel\LecturerViewModel.cs" />
-    <Compile Include="ViewModel\SubjectViewModel.cs" />
+    <Compile Include="ViewModel\RoomViewModel.cs" />
+    <Compile Include="ViewModel\StudentStatisticsViewModel.cs" />
+    <Compile Include="ViewModel\SubjectStatisticsViewModel.cs" />
+    <Compile Include="View\BuildingView.xaml.cs">
+      <DependentUpon>BuildingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LecturerStatisticsView.xaml.cs">
+      <DependentUpon>LecturerStatisticsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LecturerView.xaml.cs">
       <DependentUpon>LecturerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SubjectView.xaml.cs">
-      <DependentUpon>SubjectView.xaml</DependentUpon>
+    <Compile Include="View\RoomView.xaml.cs">
+      <DependentUpon>RoomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentStatisticsView.xaml.cs">
+      <DependentUpon>StudentStatisticsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubjectStatisticsView.xaml.cs">
+      <DependentUpon>SubjectStatisticsView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -116,11 +131,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\BuildingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LecturerStatisticsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LecturerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SubjectView.xaml">
+    <Page Include="View\RoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StudentStatisticsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SubjectStatisticsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

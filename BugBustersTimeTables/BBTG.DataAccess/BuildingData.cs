@@ -37,5 +37,51 @@ namespace BBTG.DataAccess
             }
             
         }
+
+
+        public void UpdateData(BuildingEntity building)
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                try
+                {
+                    con.Execute("UPDATE Building SET BuildingName=@BuildingName WHERE BuildingId=@BuildingId", building);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        public void SaveData(BuildingEntity building)
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                try
+                {
+                    con.Execute("INSERT INTO Building (BuildingId, BuildingName) values (@BuildingId, @BuildingName)", building);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        public void DeleteData(int buildingId)
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                try
+                {
+                    con.Execute("DELETE FROM Building WHERE BuildingId=" + buildingId);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
     }
 }
