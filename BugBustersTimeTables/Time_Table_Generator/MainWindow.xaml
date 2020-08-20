@@ -10,7 +10,9 @@
         <Frame Content="" Name="Main" HorizontalAlignment="Left" Height="537" Margin="248,0,0,0" VerticalAlignment="Top" Width="790"/>
         <DockPanel HorizontalAlignment="Left" Height="537" LastChildFill="False" VerticalAlignment="Top" Width="243" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
             <Button Content="Button" Height="51" VerticalAlignment="Top" Width="244" Click="Button_Click"/>
+            
+            
         </DockPanel>
-
+       
     </Grid>
 </Window>

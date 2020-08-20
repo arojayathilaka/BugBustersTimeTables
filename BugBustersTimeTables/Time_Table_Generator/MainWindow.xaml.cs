@@ -42,6 +42,16 @@ namespace Time_Table_Generator
             Main.Content = new LecturerView();
         }
 
+        private void Button_Click_room(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new RoomView();
+        }
+
+        private void Button_Click_building(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new BuildingView();
+        }
+
         //private void add_btn_Click(object sender, RoutedEventArgs e)
         //{
         //    //int EmployeeId = int.Parse(emp_id_txtbx.Text);

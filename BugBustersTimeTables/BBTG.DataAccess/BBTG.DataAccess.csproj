@@ -75,7 +75,11 @@
     <Compile Include="DepartmentData.cs" />
     <Compile Include="FacultyData.cs" />
     <Compile Include="LecturerData.cs" />
+    <Compile Include="LecturerStatisticsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomData.cs" />
+    <Compile Include="StudentStatisticsData.cs" />
+    <Compile Include="SubjectStatisticsData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BBTG.Common\BBTG.Common.csproj">

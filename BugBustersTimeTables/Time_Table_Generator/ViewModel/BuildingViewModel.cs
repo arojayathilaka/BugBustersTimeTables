@@ -20,5 +20,20 @@ namespace Time_Table_Generator.ViewModel
         {
             return _buildingData.LoadData();
         }
+
+        public void SaveBuildingData(BuildingEntity building)
+        {
+            _buildingData.SaveData(building);
+        }
+
+        public void UpdateBuildingData(BuildingEntity building)
+        {
+            _buildingData.UpdateData(building);
+        }
+
+        public void DeleteBuildingData(int buildingId)
+        {
+            _buildingData.DeleteData(buildingId);
+        }
     }
 }
