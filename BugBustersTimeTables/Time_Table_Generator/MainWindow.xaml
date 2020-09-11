@@ -14,52 +14,59 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <Image x:Name="logo" HorizontalAlignment="Left" Margin="28,1,0,0" VerticalAlignment="Top" Width="60" Height="75" Source="SLIIT_Logo_Crest.png"/>
-        <StackPanel Orientation="Horizontal" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="955*"/>
+            <ColumnDefinition Width="88*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="logo" HorizontalAlignment="Left" Margin="28,1,0,0" VerticalAlignment="Top" Width="60" Height="75" Source="Images/SLIIT_Logo_Crest.png"/>
+        <StackPanel Orientation="Horizontal" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="116,0,28.5,0">
             <Button x:Name="lecturer_btn" Content="Lecturers" MinWidth="100" Click="lecturer_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
-                    <ImageBrush ImageSource="Images/images.jpg"/>
+                    <ImageBrush ImageSource="Images/lecturer.jpg"/>
                 </Button.Background>
             </Button>
             <Button x:Name="subject_btn" Content="Subjects" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
-                    <ImageBrush ImageSource="Images/download.png"/>
+                    <ImageBrush ImageSource="Images/subjects.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="location_btn" Content="Locations" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="location_btn" Content="Locations" MinWidth="100" Click="location_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/location.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="working_btn" MinWidth="100" Click="subject_btn_Click" Width="109">
+            <Button x:Name="working_btn" MinWidth="100" Click="work_btn_Click" Width="109">
                 <Button.Background>
-                    <ImageBrush ImageSource="Images/illustration-calendar-icon_53876-5588.jpg" Stretch="UniformToFill"/>
+                    <ImageBrush ImageSource="Images/calender.jpg" Stretch="UniformToFill"/>
                 </Button.Background>
-                <TextBlock FontFamily="Sigmar One" Foreground="#FF213483"><Run Text="Working Days"/><LineBreak/><InlineUIContainer>
+                <TextBlock FontFamily="Sigmar One" Foreground="#FF213483">
+                    <TextBlock.Background>
+                        <ImageBrush/>
+                    </TextBlock.Background><Run Text="Working Days"/><LineBreak/><InlineUIContainer>
                         <Separator Visibility="Hidden" Width="10"/>
                     </InlineUIContainer><Run Text="&amp; Hours"/></TextBlock>
             </Button>
-            <Button x:Name="student_btn" Content="Students" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="student_btn" Content="Students" MinWidth="100" Click="student_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
-                    <ImageBrush ImageSource="Images/download (1).png"/>
+                    <ImageBrush ImageSource="Images/student.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="tags_btn" Content="Tags" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="tags_btn" Content="Tags" MinWidth="100" Click="tag_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
-                    <ImageBrush ImageSource="WhatsApp Image 2020-08-16 at 9.03.32 PM.jpeg"/>
+                    <ImageBrush ImageSource="Images/tags.jpeg"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="stats_btn" Content="Statistics" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="stats_btn" Content="Statistics" MinWidth="100" Click="stat_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
-                    <ImageBrush ImageSource="Images/download (2).png"/>
+                    <ImageBrush ImageSource="Images/stats.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="session_btn" Content="Sessions" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="session_btn" Content="Sessions" MinWidth="100" Click="session_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
-                    <ImageBrush ImageSource="session-icon-3.jpg"/>
+                    <ImageBrush ImageSource="Images/session.jpg"/>
                 </Button.Background>
             </Button>
         </StackPanel>
-        <Frame Content="" Name="Main" Margin="0,75,0,0" NavigationUIVisibility="Automatic"/>
+        <Frame Content="" Name="Main" Margin="0,75,0,0" NavigationUIVisibility="Automatic" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

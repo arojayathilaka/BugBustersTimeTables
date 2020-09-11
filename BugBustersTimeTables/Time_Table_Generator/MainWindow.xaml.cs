@@ -39,5 +39,35 @@ namespace Time_Table_Generator
         {
             Main.Content = new SubjectView();
         }
+
+        private void location_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new SubjectView();
+        }
+
+        private void work_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void student_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tag_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void stat_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void session_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

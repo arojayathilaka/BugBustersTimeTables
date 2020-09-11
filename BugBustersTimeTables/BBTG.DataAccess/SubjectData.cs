@@ -27,6 +27,8 @@ namespace BBTG.DataAccess
                     sb.AppendLine("FROM");
                     sb.AppendLine("Subject");
 
+                    var x = con.Query<SubjectEntity>(sb.ToString(), new DynamicParameters()).ToList();
+
                     return con.Query<SubjectEntity>(sb.ToString(), new DynamicParameters()).ToList();
                 }
                 catch (Exception e)
