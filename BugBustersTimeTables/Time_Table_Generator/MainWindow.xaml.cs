@@ -50,9 +50,6 @@ namespace Time_Table_Generator
             Main.Content = new TagView();
         }
 
-        private void parallel_btn_Click(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new ParallelSessionView();
-        }
+       
     }
 }

@@ -153,7 +153,7 @@ namespace Time_Table_Generator.View
                 code_txtbx.Text = subject.SubjectCode;
                 year_combobx.Text = subject.Year.ToString();
                 sem_combobx.Text = subject.Semester.ToString();
-                lec_combobx.Text = subject.NoOfLecHrs.ToString() ;
+                lec_combobx.Text = subject.NoOfLecHrs.ToString();
                 tutorial_combobx.Text = subject.NoOfTuteHrs.ToString();
                 lab_combobx.Text = subject.NoOfLabHrs.ToString();
                 eval_combobx.Text = subject.NoOfEvalHrs.ToString();
@@ -178,7 +178,8 @@ namespace Time_Table_Generator.View
             if (updateMode)
             {
                 SubjectId = subject.SubjectId;
-            } else
+            }
+            else
             {
                 SubjectId = subjects.Last().SubjectId + 1;
             }
@@ -221,47 +222,47 @@ namespace Time_Table_Generator.View
             //    else add_btn_.IsEnabled = false;
             //}
 
-            
-                if (
-                    updateMode &&
-                    code_txtbx.Text != "Eg: IT1050" &&
-                    !String.IsNullOrEmpty(year_combobx_val) &&
-                    !String.IsNullOrEmpty(sem_combobx_val) &&
-                    !String.IsNullOrEmpty(lec_combobx_val) &&
-                    !String.IsNullOrEmpty(tute_combobx_val) &&
-                    !String.IsNullOrEmpty(lab_combobx_val) &&
-                    !String.IsNullOrEmpty(eval_combobx_val) &&
-                    !String.IsNullOrEmpty(name_txtbx.Text) &&
-                    !String.IsNullOrEmpty(code_txtbx.Text)
-                )
-                {
-                    update_btn_.IsEnabled = true;
-                }
-                else
-                {
-                    update_btn_.IsEnabled = false;
-                }
-            
-                if (
-                    !updateMode &&
-                    code_txtbx.Text != "Eg: IT1050" &&
-                    !subjectCodes.Contains(code_txtbx.Text) &&
-                    !String.IsNullOrEmpty(year_combobx_val) &&
-                    !String.IsNullOrEmpty(sem_combobx_val) &&
-                    !String.IsNullOrEmpty(lec_combobx_val) &&
-                    !String.IsNullOrEmpty(tute_combobx_val) &&
-                    !String.IsNullOrEmpty(lab_combobx_val) &&
-                    !String.IsNullOrEmpty(eval_combobx_val) &&
-                    !String.IsNullOrEmpty(name_txtbx.Text) &&
-                    !String.IsNullOrEmpty(code_txtbx.Text)
-                )
-                {
-                    add_btn_.IsEnabled = true;
-                }
-                else
-                {
-                    add_btn_.IsEnabled = false;
-                }
+
+            if (
+                updateMode &&
+                code_txtbx.Text != "Eg: IT1050" &&
+                !String.IsNullOrEmpty(year_combobx_val) &&
+                !String.IsNullOrEmpty(sem_combobx_val) &&
+                !String.IsNullOrEmpty(lec_combobx_val) &&
+                !String.IsNullOrEmpty(tute_combobx_val) &&
+                !String.IsNullOrEmpty(lab_combobx_val) &&
+                !String.IsNullOrEmpty(eval_combobx_val) &&
+                !String.IsNullOrEmpty(name_txtbx.Text) &&
+                !String.IsNullOrEmpty(code_txtbx.Text)
+            )
+            {
+                update_btn_.IsEnabled = true;
+            }
+            else
+            {
+                update_btn_.IsEnabled = false;
+            }
+
+            if (
+                !updateMode &&
+                code_txtbx.Text != "Eg: IT1050" &&
+                !subjectCodes.Contains(code_txtbx.Text) &&
+                !String.IsNullOrEmpty(year_combobx_val) &&
+                !String.IsNullOrEmpty(sem_combobx_val) &&
+                !String.IsNullOrEmpty(lec_combobx_val) &&
+                !String.IsNullOrEmpty(tute_combobx_val) &&
+                !String.IsNullOrEmpty(lab_combobx_val) &&
+                !String.IsNullOrEmpty(eval_combobx_val) &&
+                !String.IsNullOrEmpty(name_txtbx.Text) &&
+                !String.IsNullOrEmpty(code_txtbx.Text)
+            )
+            {
+                add_btn_.IsEnabled = true;
+            }
+            else
+            {
+                add_btn_.IsEnabled = false;
+            }
         }
 
         private void code_txtbx_GotFocus(object sender, RoutedEventArgs e)
@@ -327,7 +328,7 @@ namespace Time_Table_Generator.View
         private void eval_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem item = eval_combobx.SelectedItem as ComboBoxItem;
-            if (item != null) eval_combobx_val = item.Content.ToString(); 
+            if (item != null) eval_combobx_val = item.Content.ToString();
             CheckValidations();
         }
     }
