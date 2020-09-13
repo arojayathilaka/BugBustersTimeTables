@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="BBTG" Height="600" Width="1050" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                <GradientStop Color="#FFF0F0F0" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <StackPanel Orientation="Horizontal" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center">
             <Button x:Name="lecturer_btn" Content="Lecturers" MinWidth="100" Click="lecturer_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
@@ -29,12 +35,12 @@
                 </Button.Background>
                 <TextBlock FontFamily="Sigmar One" Foreground="#FF213483">Working Days<LineBreak/><Separator Visibility="Hidden" Width="10"/>&amp; Hours</TextBlock>
             </Button>
-            <Button x:Name="student_btn" Content="Students" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="student_btn" Content="Students" MinWidth="100" Click="student_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/download (1).png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="tags_btn" Content="Tags" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="tags_btn" Content="Tags" MinWidth="100" Click="tag_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="WhatsApp Image 2020-08-16 at 9.03.32 PM.jpeg"/>
                 </Button.Background>
@@ -44,12 +50,19 @@
                     <ImageBrush ImageSource="Images/download (2).png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="session_btn" Content="Sessions" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="session_btn" Content="Sessions" MinWidth="100" Click="parallel_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="session-icon-3.jpg"/>
                 </Button.Background>
             </Button>
         </StackPanel>
-        <Frame Content="" Name="Main" Margin="0,75,0,0" NavigationUIVisibility="Automatic"/>
+        <Frame Content="" Name="Main" Margin="0,75,0,0" NavigationUIVisibility="Automatic">
+            <Frame.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFF8900" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.213"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
     </Grid>
 </Window>
