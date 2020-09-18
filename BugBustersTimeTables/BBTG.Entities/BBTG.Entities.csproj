@@ -49,6 +49,7 @@
     <Compile Include="Data\DepartmentEntity.cs" />
     <Compile Include="Data\FacultyEntity.cs" />
     <Compile Include="Data\LecturerEntity.cs" />
+    <Compile Include="Data\SessionEntity.cs" />
     <Compile Include="Data\SubjectEntity.cs" />
     <Compile Include="Data\RoomEntity.cs" />
     <Compile Include="Data\TagEntity.cs" />

@@ -68,7 +68,7 @@ namespace Time_Table_Generator
 
         private void session_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            Main.Content = new SessionView();
         }
     }
 }

@@ -184,7 +184,6 @@ namespace Time_Table_Generator.View
             int Level = int.Parse(level_combobx.Text);
             double Rank = double.Parse(rank_txtbx.Text);
 
-
             lecturer = new LecturerEntity(EmployeeId, Name, Faculty, Department, Center, Building, Level, Rank);
             return lecturer;
         }
