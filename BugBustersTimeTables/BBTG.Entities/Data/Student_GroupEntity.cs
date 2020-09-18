@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BBTG.Entities.Data
 {
-    public class StudentEntity
+    public class Student_GroupEntity
     {
         public int StudentId { get; set; }
 
@@ -18,24 +18,19 @@ namespace BBTG.Entities.Data
 
         public string GroupId { get; set; }
 
-        public int SubGroupNumber { get; set; }
-
-        public string SubGroupId { get; set; }
-
-        public StudentEntity()
+        public Student_GroupEntity()
         {
 
         }
 
-        public StudentEntity(int StudentId, string AcademicYrSem, string Programme, int GroupNumber, string GroupId, int SubGroupNumber, string SubGroupId)
+        public Student_GroupEntity(int StudentId, string AcademicYrSem, string Programme, int GroupNumber, string GroupId)
         {
             this.StudentId = StudentId;
             this.AcademicYrSem = AcademicYrSem;
             this.Programme = Programme;
             this.GroupNumber = GroupNumber;
             this.GroupId = GroupId;
-            this.SubGroupNumber = SubGroupNumber;
-            this.SubGroupId = SubGroupId;
         }
+
     }
 }

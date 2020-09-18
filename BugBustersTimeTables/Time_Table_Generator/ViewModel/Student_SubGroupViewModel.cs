@@ -7,25 +7,25 @@ using System.Text;
 
 namespace Time_Table_Generator.ViewModel
 {
-    internal class StudentViewModel
+    internal class Student_SubGroupViewModel
     {
-        StudentData _studentData;
-        public StudentViewModel()
+        Student_SubGroupData _studentData;
+        public Student_SubGroupViewModel()
         {
-            _studentData = new StudentData();
+            _studentData = new Student_SubGroupData();
         }
 
-        public List<StudentEntity> LoadStudentData()
+        public List<Student_SubGroupEntity> LoadStudentData()
         {
             return _studentData.LoadData();
         }
 
-        public void SaveStudentData(StudentEntity student)
+        public void SaveStudentData(Student_SubGroupEntity student)
         {
             _studentData.SaveData(student);
         }
 
-        public void UpdateStudentData(StudentEntity student)
+        public void UpdateStudentData(Student_SubGroupEntity student)
         {
             _studentData.UpdateData(student);
         }

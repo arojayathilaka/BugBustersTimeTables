@@ -44,7 +44,8 @@
     <Compile Include="Data\BuildingEntity.cs" />
     <Compile Include="Data\CenterEntity.cs" />
     <Compile Include="Data\ParallelSessionEntity.cs" />
-    <Compile Include="Data\StudentEntity.cs" />
+    <Compile Include="Data\Student_GroupEntity.cs" />
+    <Compile Include="Data\Student_SubGroupEntity.cs" />
     <Compile Include="Data\DepartmentEntity.cs" />
     <Compile Include="Data\FacultyEntity.cs" />
     <Compile Include="Data\LecturerEntity.cs" />
