@@ -51,5 +51,7 @@
         <ComboBox x:Name="building_combobx" HorizontalAlignment="Left" Margin="191,252,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="BuildingName" SelectionChanged="building_combobx_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22"/>
         <ComboBox x:Name="faculty_combobx" HorizontalAlignment="Left" Margin="191,119,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="FacultyName" SelectionChanged="faculty_combobx_SelectionChanged" RenderTransformOrigin="0.525,1.636" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22"/>
         <ComboBox x:Name="department_combobx" HorizontalAlignment="Left" Margin="191,162,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="DepartmentName" SelectionChanged="department_combobx_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="447,402,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox  x:Name="textbox" HorizontalAlignment="Left" Height="24" Margin="546,400,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Page>

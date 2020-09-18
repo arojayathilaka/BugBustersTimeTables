@@ -30,7 +30,6 @@ namespace Time_Table_Generator.View
         DepartmentViewModel _departmentViewModel;
         LecturerEntity lecturer;
         string level;
-
         bool updateMode = false;
         Regex empIdRegex = new Regex(@"\b\d{6}\b");
         List<int> lecturerIds = new List<int>();
@@ -99,7 +98,7 @@ namespace Time_Table_Generator.View
 
         private void delete_btn__Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete?", "BBTG", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete?", "BBTG", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
 
             if(result == MessageBoxResult.Yes)
             {
@@ -175,16 +174,16 @@ namespace Time_Table_Generator.View
 
         private LecturerEntity CreateLecturerEntity()
         {
-            int EmployeeId = int.Parse(emp_id_txtbx.Text);
-            string Name = name_txtbx.Text;
-            string Faculty = faculty_combobx.Text;        
-            string Department = department_combobx.Text;
-            string Center = center_combobx.Text;
-            string Building = building_combobx.Text;
-            int Level = int.Parse(level_combobx.Text);
-            double Rank = double.Parse(rank_txtbx.Text);
-
-            lecturer = new LecturerEntity(EmployeeId, Name, Faculty, Department, Center, Building, Level, Rank);
+            lecturer = new LecturerEntity {
+                EmployeeId = int.Parse(emp_id_txtbx.Text), 
+                Name = name_txtbx.Text, 
+                Faculty = faculty_combobx.Text, 
+                Department = department_combobx.Text, 
+                Center = center_combobx.Text, 
+                Building = building_combobx.Text, 
+                Level = int.Parse(level_combobx.Text), 
+                Rank = double.Parse(rank_txtbx.Text)
+            };
             return lecturer;
         }
 
@@ -298,6 +297,13 @@ namespace Time_Table_Generator.View
         private void emp_id_txtbx_GotFocus(object sender, RoutedEventArgs e)
         {
             if(emp_id_txtbx.Text == "Eg: 000150") emp_id_txtbx.Text = "";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //lecturer_data_grid.IsTextSearchEnabled = true;
+            //this.dataGrid.SearchHelper.Search(textbox.Text);
+            lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerDataById(1);
         }
     }
 }

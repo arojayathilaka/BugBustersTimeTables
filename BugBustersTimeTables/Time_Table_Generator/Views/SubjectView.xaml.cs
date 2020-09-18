@@ -24,14 +24,12 @@ namespace Time_Table_Generator.View
     {
         SubjectViewModel _subjectViewModel;
         SubjectEntity subject;
-        //int subjectId;
         bool updateMode = false;
         bool updateModeSelected = false;
         List<SubjectEntity> subjects;
         List<string> subjectNames = new List<string>();
         List<string> subjectCodes = new List<string>();
         string lec_combobx_val, tute_combobx_val, lab_combobx_val, eval_combobx_val, year_combobx_val, sem_combobx_val;
-        //Regex empIdRegex = new Regex(@"\b\d{6}\b");
 
         public SubjectView()
         {
@@ -175,25 +173,26 @@ namespace Time_Table_Generator.View
         private SubjectEntity CreateSubjectEntity()
         {
             int SubjectId;
-            if (updateMode)
-            {
+            if (subjects.Count == 0)
+                SubjectId = 1;
+            else if (updateMode)
                 SubjectId = subject.SubjectId;
-            }
             else
-            {
                 SubjectId = subjects.Last().SubjectId + 1;
-            }
 
-            string SubjectCode = code_txtbx.Text;
-            string SubjectName = name_txtbx.Text;
-            int Year = int.Parse(year_combobx.Text);
-            int Semester = int.Parse(sem_combobx.Text);
-            int NoOfLecHrs = int.Parse(lec_combobx.Text);
-            int NoOfTuteHrs = int.Parse(tutorial_combobx.Text);
-            int NoOfLabHrs = int.Parse(lab_combobx.Text);
-            int NoOfEvalHrs = int.Parse(eval_combobx.Text);
+            subject = new SubjectEntity{
 
-            subject = new SubjectEntity(SubjectId, SubjectCode, SubjectName, Year, Semester, NoOfLecHrs, NoOfTuteHrs, NoOfLabHrs, NoOfEvalHrs);
+                SubjectId = SubjectId, 
+                SubjectCode = code_txtbx.Text, 
+                SubjectName = name_txtbx.Text, 
+                Year = int.Parse(year_combobx.Text), 
+                Semester = int.Parse(sem_combobx.Text), 
+                NoOfLecHrs = int.Parse(lec_combobx.Text), 
+                NoOfTuteHrs = int.Parse(tutorial_combobx.Text), 
+                NoOfLabHrs = int.Parse(lab_combobx.Text), 
+                NoOfEvalHrs = int.Parse(eval_combobx.Text)
+
+            };
             return subject;
         }
 
