@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Time_Table_Generator.ViewModel;
+using Time_Table_Generator.Views;
 
 namespace Time_Table_Generator.View
 {
@@ -23,11 +24,11 @@ namespace Time_Table_Generator.View
     /// </summary>
     public partial class StudentView : Page
     {
-        StudentViewModel _studentViewModel;
-        StudentEntity student;
+        Student_SubGroupViewModel _studentViewModel;
+        Student_SubGroupEntity student;
 
         bool updateMode = false;
-        List<StudentEntity> students;
+        List<Student_SubGroupEntity> students;
         List<int> studentIds = new List<int>();
 
         public StudentView()
@@ -37,12 +38,12 @@ namespace Time_Table_Generator.View
 
         private void Student_Page_Loaded(object sender, RoutedEventArgs e)
         {
-            _studentViewModel = new StudentViewModel();
+            _studentViewModel = new Student_SubGroupViewModel();
 
             students = _studentViewModel.LoadStudentData();
             student_data_grid.ItemsSource = students;
 
-            foreach (StudentEntity l in students)
+            foreach (Student_SubGroupEntity l in students)
             {
                 studentIds.Add(l.StudentId);
             }
@@ -122,7 +123,7 @@ namespace Time_Table_Generator.View
             updateMode = true;
             delete_btn_.IsEnabled = true;
             DataGrid dataGrid = (DataGrid)sender;
-            student = dataGrid.SelectedItem as StudentEntity;
+            student = dataGrid.SelectedItem as Student_SubGroupEntity;
 
             if (student != null)
             {
@@ -140,7 +141,7 @@ namespace Time_Table_Generator.View
             ClearAll();
         }
 
-        private StudentEntity CreateStudentEntity()
+        private Student_SubGroupEntity CreateStudentEntity()
         {
             int StudentId;
             if (updateMode)
@@ -159,7 +160,7 @@ namespace Time_Table_Generator.View
             string SubGroupId = subGroupId_txtbx.Text;
 
 
-            student = new StudentEntity(StudentId, AcademicYrSem, Programme, GroupNumber, GroupId, SubGroupNumber, SubGroupId);
+            student = new Student_SubGroupEntity(StudentId, AcademicYrSem, Programme, GroupNumber, GroupId, SubGroupNumber, SubGroupId);
             return student;
         }
 
@@ -256,6 +257,11 @@ namespace Time_Table_Generator.View
         private void subGroupId_txtbx_TextChanged(object sender, TextChangedEventArgs e)
         {
             CheckValidations();
+        }
+
+        private void group_btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
