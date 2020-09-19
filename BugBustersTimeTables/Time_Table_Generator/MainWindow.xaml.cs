@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Time_Table_Generator.View;
 using Time_Table_Generator.ViewModel;
+using Time_Table_Generator.Views;
 
 namespace Time_Table_Generator
 {
@@ -57,6 +58,7 @@ namespace Time_Table_Generator
 
         private void working_btn_Click(object sender, RoutedEventArgs e)
         {
+            Main.Content = new AddWorkView();
 
         }
 
@@ -69,5 +71,6 @@ namespace Time_Table_Generator
         {
             Main.Content = new SessionView();
         }
+
     }
 }
