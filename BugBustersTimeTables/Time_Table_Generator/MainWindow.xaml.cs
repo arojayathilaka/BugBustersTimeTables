@@ -58,6 +58,7 @@ namespace Time_Table_Generator
 
         private void working_btn_Click(object sender, RoutedEventArgs e)
         {
+            Main.Content = new AddWorkView();
 
         }
 
@@ -70,5 +71,6 @@ namespace Time_Table_Generator
         {
             Main.Content = new SessionAddView();
         }
+
     }
 }

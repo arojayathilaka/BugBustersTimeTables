@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Time_Table_Generator</RootNamespace>
     <AssemblyName>Time_Table_Generator</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -33,6 +33,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -103,6 +104,10 @@
     <Compile Include="ViewModel\LecturerViewModel.cs" />
     <Compile Include="ViewModel\Student_SubGroupViewModel.cs" />
     <Compile Include="ViewModel\SubjectViewModel.cs" />
+    <Compile Include="ViewModel\WorkViewModel.cs" />
+    <Compile Include="Views\AddWorkView.xaml.cs">
+      <DependentUpon>AddWorkView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BuildingView.xaml.cs">
       <DependentUpon>BuildingView.xaml</DependentUpon>
     </Compile>
@@ -114,6 +119,8 @@
     </Compile>
     <Compile Include="Views\SessionsView.xaml.cs">
       <DependentUpon>SessionsView.xaml</DependentUpon>
+    <Compile Include="Views\ManageWorkView.xaml.cs">
+      <DependentUpon>ManageWorkView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Student_GroupView.xaml.cs">
       <DependentUpon>Student_GroupView.xaml</DependentUpon>
@@ -139,6 +146,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddWorkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManageWorkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SessionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
