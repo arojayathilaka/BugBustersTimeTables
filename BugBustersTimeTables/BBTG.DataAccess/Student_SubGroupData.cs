@@ -11,9 +11,9 @@ using System.Windows;
 
 namespace BBTG.DataAccess
 {
-    public class StudentData
+    public class Student_SubGroupData
     {
-        public List<StudentEntity> LoadData()
+        public List<Student_SubGroupEntity> LoadData()
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -25,16 +25,16 @@ namespace BBTG.DataAccess
                     sb.AppendLine("FROM");
                     sb.AppendLine("Student");
 
-                    return con.Query<StudentEntity>(sb.ToString(), new DynamicParameters()).ToList();
+                    return con.Query<Student_SubGroupEntity>(sb.ToString(), new DynamicParameters()).ToList();
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
-                    return new List<StudentEntity>();
+                    return new List<Student_SubGroupEntity>();
                 }
             }
         }
-        public void UpdateData(StudentEntity student)
+        public void UpdateData(Student_SubGroupEntity student)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -49,7 +49,7 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void SaveData(StudentEntity student)
+        public void SaveData(Student_SubGroupEntity student)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {

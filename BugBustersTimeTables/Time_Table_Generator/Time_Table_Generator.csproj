@@ -96,11 +96,12 @@
     <Compile Include="ViewModel\BuildingViewModel.cs" />
     <Compile Include="ViewModel\CenterViewModel.cs" />
     <Compile Include="ViewModel\ParallelSessionViewModel.cs" />
+    <Compile Include="ViewModel\Student_GroupViewModel.cs" />
     <Compile Include="ViewModel\TagViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\FacultyViewModel.cs" />
     <Compile Include="ViewModel\LecturerViewModel.cs" />
-    <Compile Include="ViewModel\StudentViewModel.cs" />
+    <Compile Include="ViewModel\Student_SubGroupViewModel.cs" />
     <Compile Include="ViewModel\SubjectViewModel.cs" />
     <Compile Include="ViewModel\WorkViewModel.cs" />
     <Compile Include="Views\AddWorkView.xaml.cs">
@@ -118,11 +119,14 @@
     <Compile Include="Views\SessionView.xaml.cs">
       <DependentUpon>SessionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Student_GroupView.xaml.cs">
+      <DependentUpon>Student_GroupView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SubjectView.xaml.cs">
       <DependentUpon>SubjectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\StudentView.xaml.cs">
-      <DependentUpon>StudentView.xaml</DependentUpon>
+    <Compile Include="Views\Student_SubGroupView.xaml.cs">
+      <DependentUpon>Student_SubGroupView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TagView.xaml.cs">
       <DependentUpon>TagView.xaml</DependentUpon>
@@ -148,6 +152,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StudentView.xaml">
+    <Page Include="Views\Student_GroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student_SubGroupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
