@@ -29,9 +29,10 @@ namespace Time_Table_Generator.View
         FacultyViewModel _facultyViewModel;
         DepartmentViewModel _departmentViewModel;
         LecturerEntity lecturer;
-        string level;
+        string level, faculty_combobx_val, dept_combobx_val, center_combobx_val, building_combobx_val;
         bool updateMode = false;
         Regex empIdRegex = new Regex(@"\b\d{6}\b");
+        Regex onlyNoRegex = new Regex(@"^\d+$");
         List<int> lecturerIds = new List<int>();
 
         public LecturerView()
@@ -132,6 +133,7 @@ namespace Time_Table_Generator.View
             add_btn_.IsEnabled = false;
             update_btn_.IsEnabled = false;
             delete_btn_.IsEnabled = false;
+            name_tb.Visibility = Visibility.Hidden;
         }
 
         private void lecture_data_grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -190,17 +192,16 @@ namespace Time_Table_Generator.View
         private void CheckValidations()
         {
             // Regex rankRegex = new Regex(@"^[0-9]*\.[0-9]{6}$");
-            
                 if (
                     updateMode &&
                     emp_id_txtbx.Text != "Eg: 000150" &&
                     empIdRegex.IsMatch(emp_id_txtbx.Text) &&
                     !String.IsNullOrEmpty(emp_id_txtbx.Text) &&
                     !String.IsNullOrEmpty(name_txtbx.Text) &&
-                    !String.IsNullOrEmpty(faculty_combobx.Text) &&
-                    !String.IsNullOrEmpty(department_combobx.Text) &&
-                    !String.IsNullOrEmpty(center_combobx.Text) &&
-                    !String.IsNullOrEmpty(building_combobx.Text) &&
+                    !String.IsNullOrEmpty(faculty_combobx_val) &&
+                    !String.IsNullOrEmpty(dept_combobx_val) &&
+                    !String.IsNullOrEmpty(center_combobx_val) &&
+                    !String.IsNullOrEmpty(building_combobx_val) &&
                     !String.IsNullOrEmpty(level) &&
                     !String.IsNullOrEmpty(rank_txtbx.Text)
                 )
@@ -208,9 +209,7 @@ namespace Time_Table_Generator.View
                     update_btn_.IsEnabled = true;
                 }
                 else
-                {
                     update_btn_.IsEnabled = false;
-                }
             
                 if (
                     !updateMode &&
@@ -219,26 +218,54 @@ namespace Time_Table_Generator.View
                     !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)) &&
                     !String.IsNullOrEmpty(emp_id_txtbx.Text) &&
                     !String.IsNullOrEmpty(name_txtbx.Text) &&
-                    !String.IsNullOrEmpty(faculty_combobx.Text) &&
-                    !String.IsNullOrEmpty(department_combobx.Text) &&
-                    !String.IsNullOrEmpty(center_combobx.Text) &&
-                    !String.IsNullOrEmpty(building_combobx.Text) &&
-                    !String.IsNullOrEmpty(level) &&
-                    !String.IsNullOrEmpty(rank_txtbx.Text)
+                    !String.IsNullOrEmpty(faculty_combobx_val) &&
+                    !String.IsNullOrEmpty(dept_combobx_val) &&
+                    !String.IsNullOrEmpty(center_combobx_val) &&
+                    !String.IsNullOrEmpty(building_combobx_val) &&
+                    !String.IsNullOrEmpty(level)
                 )
                 {
                     add_btn_.IsEnabled = true;
                 }
                 else 
-                { 
                     add_btn_.IsEnabled = false;
-                }
+
+            if (String.IsNullOrEmpty(emp_id_txtbx.Text)) emp_id_req_tb.Visibility = Visibility.Visible;
+            else emp_id_req_tb.Visibility = Visibility.Hidden;
+
+            if (onlyNoRegex.IsMatch(emp_id_txtbx.Text) && !updateMode && emp_id_txtbx.Text != "Eg: 000150" && !String.IsNullOrEmpty(emp_id_txtbx.Text) && lecturerIds.Contains(int.Parse(emp_id_txtbx.Text))) 
+                emp_id_exists_tb.Visibility = Visibility.Visible;
+            else 
+                emp_id_exists_tb.Visibility = Visibility.Hidden;
+
+            if (!String.IsNullOrEmpty(emp_id_txtbx.Text) && !empIdRegex.IsMatch(emp_id_txtbx.Text)) emp_id_invalid_tb.Visibility = Visibility.Visible;
+            else emp_id_invalid_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(name_txtbx.Text)) name_tb.Visibility = Visibility.Visible;
+            else name_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(faculty_combobx_val)) faculty_tb.Visibility = Visibility.Visible;
+            else faculty_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(dept_combobx_val)) dep_tb.Visibility = Visibility.Visible;
+            else dep_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(center_combobx_val)) center_tb.Visibility = Visibility.Visible;
+            else center_tb.Visibility = Visibility.Hidden;
             
+            if (String.IsNullOrEmpty(building_combobx_val)) building_tb.Visibility = Visibility.Visible;
+            else building_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(level)) lvl_tb.Visibility = Visibility.Visible;
+            else lvl_tb.Visibility = Visibility.Hidden;
+
+
         }
 
         private void emp_id_txtbx_TextChanged(object sender, TextChangedEventArgs e)
         {
-            CheckValidations();
+            if (emp_id_txtbx.Text != "Eg: 000150")
+                CheckValidations();
 
             if (empIdRegex.IsMatch(emp_id_txtbx.Text) && level_combobx.Text != "" && emp_id_txtbx.Text != "Eg: 000150" && !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)))
             {
@@ -253,31 +280,56 @@ namespace Time_Table_Generator.View
 
         private void faculty_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CheckValidations();
+            ComboBox facultyComboBx = sender as ComboBox;
+            if (facultyComboBx.SelectedItem != null)
+            {
+                FacultyEntity selectedFac = facultyComboBx.SelectedItem as FacultyEntity;
+                faculty_combobx_val = selectedFac.FacultyName;
+                CheckValidations();
+            }
         }
 
         private void department_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CheckValidations();
+            ComboBox deptComboBx = sender as ComboBox;
+            if (deptComboBx.SelectedItem != null)
+            {
+                DepartmentEntity selectedSub = deptComboBx.SelectedItem as DepartmentEntity;
+                dept_combobx_val = selectedSub.DepartmentName;
+                CheckValidations();
+            }
         }
 
         private void center_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CheckValidations();
+            ComboBox centerComboBx = sender as ComboBox;
+            if (centerComboBx.SelectedItem != null)
+            {
+                CenterEntity selectedCenter = centerComboBx.SelectedItem as CenterEntity;
+                center_combobx_val = selectedCenter.CenterName;
+                CheckValidations();
+            }
         }
 
         private void building_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CheckValidations();
+            ComboBox buildingComboBx = sender as ComboBox;
+            if (buildingComboBx.SelectedItem != null)
+            {
+                BuildingEntity selectedBuilding = buildingComboBx.SelectedItem as BuildingEntity;
+                building_combobx_val = selectedBuilding.BuildingName;
+                CheckValidations();
+            }
         }
 
         private void level_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CheckValidations();
-            ComboBoxItem item = level_combobx.SelectedItem as ComboBoxItem;
-            if(item != null)
+            ComboBox levelComboBx = sender as ComboBox;
+            ComboBoxItem selectedLvl = levelComboBx.SelectedItem as ComboBoxItem;
+            if(selectedLvl != null)
             {
-                level = item.Content.ToString();
+                level = selectedLvl.Content.ToString();
                 if (empIdRegex.IsMatch(emp_id_txtbx.Text) && emp_id_txtbx.Text != "Eg: 000150" && !lecturerIds.Contains(int.Parse(emp_id_txtbx.Text)) && !updateMode)
                 {
                     rank_txtbx.Text = level + "." + emp_id_txtbx.Text;
@@ -303,7 +355,7 @@ namespace Time_Table_Generator.View
         {
             //lecturer_data_grid.IsTextSearchEnabled = true;
             //this.dataGrid.SearchHelper.Search(textbox.Text);
-            lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerDataById(1);
+            //lecturer_data_grid.ItemsSource = _lecturerViewModel.LoadLecturerDataById(1);
         }
     }
 }

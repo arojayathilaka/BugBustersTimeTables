@@ -83,6 +83,7 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -119,6 +120,7 @@
     </Compile>
     <Compile Include="Views\SessionsView.xaml.cs">
       <DependentUpon>SessionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ManageWorkView.xaml.cs">
       <DependentUpon>ManageWorkView.xaml</DependentUpon>
     </Compile>

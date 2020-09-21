@@ -135,6 +135,8 @@ namespace Time_Table_Generator.View
             add_btn_.IsEnabled = false;
             update_btn_.IsEnabled = false;
             delete_btn_.IsEnabled = false;
+            name_tb.Visibility = Visibility.Hidden;
+            code_tb.Visibility = Visibility.Hidden;
         }
 
         private void subject_data_grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -237,10 +239,8 @@ namespace Time_Table_Generator.View
             {
                 update_btn_.IsEnabled = true;
             }
-            else
-            {
+            else 
                 update_btn_.IsEnabled = false;
-            }
 
             if (
                 !updateMode &&
@@ -258,10 +258,32 @@ namespace Time_Table_Generator.View
             {
                 add_btn_.IsEnabled = true;
             }
-            else
-            {
+            else 
                 add_btn_.IsEnabled = false;
-            }
+
+            if (String.IsNullOrEmpty(year_combobx_val)) year_tb.Visibility = Visibility.Visible;
+            else year_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(sem_combobx_val)) sem_tb.Visibility = Visibility.Visible;
+            else sem_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(lec_combobx_val)) lec_tb.Visibility = Visibility.Visible;
+            else lec_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(tute_combobx_val)) tute_tb.Visibility = Visibility.Visible;
+            else tute_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(lab_combobx_val)) lab_tb.Visibility = Visibility.Visible;
+            else lab_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(eval_combobx_val)) eval_tb.Visibility = Visibility.Visible;
+            else eval_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(name_txtbx.Text)) name_tb.Visibility = Visibility.Visible;
+            else name_tb.Visibility = Visibility.Hidden;
+
+            if (String.IsNullOrEmpty(code_txtbx.Text)) code_tb.Visibility = Visibility.Visible;
+            else code_tb.Visibility = Visibility.Hidden;
         }
 
         private void code_txtbx_GotFocus(object sender, RoutedEventArgs e)
@@ -278,7 +300,9 @@ namespace Time_Table_Generator.View
         private void code_txtbx_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox codeTextBox = sender as TextBox;
-            CheckValidations();
+            if(code_txtbx.Text != "Eg: IT1050")
+                CheckValidations();
+
             if (updateMode)
             {
                 updateModeSelected = true;
@@ -291,44 +315,69 @@ namespace Time_Table_Generator.View
 
         private void year_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem item = year_combobx.SelectedItem as ComboBoxItem;
-            if (item != null) year_combobx_val = item.Content.ToString();
-            CheckValidations();
+            ComboBox yearCombobx = sender as ComboBox;
+            if(yearCombobx.SelectedItem != null)
+            {
+                ComboBoxItem selectedYr = yearCombobx.SelectedItem as ComboBoxItem;
+                year_combobx_val = selectedYr.Content.ToString();
+                CheckValidations();
+            }
         }
 
         private void sem_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem item = sem_combobx.SelectedItem as ComboBoxItem;
-            if (item != null) sem_combobx_val = item.Content.ToString();
-            CheckValidations();
+            ComboBox semCombobx = sender as ComboBox;
+            if (semCombobx.SelectedItem != null)
+            {
+                ComboBoxItem selectedSem = semCombobx.SelectedItem as ComboBoxItem;
+                sem_combobx_val = selectedSem.Content.ToString();
+                CheckValidations();
+            }
+            
         }
 
         private void lec_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem item = lec_combobx.SelectedItem as ComboBoxItem;
-            if (item != null) lec_combobx_val = item.Content.ToString();
-            CheckValidations();
+            ComboBox lecCombobx = sender as ComboBox;
+            if (lecCombobx.SelectedItem != null)
+            {
+                ComboBoxItem selectedLec = lecCombobx.SelectedItem as ComboBoxItem;
+                lec_combobx_val = selectedLec.Content.ToString();
+                CheckValidations();
+            }
         }
 
         private void tutorial_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem item = tutorial_combobx.SelectedItem as ComboBoxItem;
-            if (item != null) tute_combobx_val = item.Content.ToString();
-            CheckValidations();
+            ComboBox tuteCombobx = sender as ComboBox;
+            if(tuteCombobx.SelectedItem != null)
+            {
+                ComboBoxItem selectedTute = tuteCombobx.SelectedItem as ComboBoxItem;
+                tute_combobx_val = selectedTute.Content.ToString();
+                CheckValidations();
+            }
         }
 
         private void lab_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem item = lab_combobx.SelectedItem as ComboBoxItem;
-            if (item != null) lab_combobx_val = item.Content.ToString();
-            CheckValidations();
+            ComboBox labCombobx = sender as ComboBox;
+            if (labCombobx.SelectedItem != null)
+            {
+                ComboBoxItem selectedLab = labCombobx.SelectedItem as ComboBoxItem;
+                lab_combobx_val = selectedLab.Content.ToString();
+                CheckValidations();
+            } 
         }
 
         private void eval_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem item = eval_combobx.SelectedItem as ComboBoxItem;
-            if (item != null) eval_combobx_val = item.Content.ToString();
-            CheckValidations();
+            ComboBox evalCombobx = sender as ComboBox;
+            if (evalCombobx.SelectedItem != null)
+            {
+                ComboBoxItem selectedEval = evalCombobx.SelectedItem as ComboBoxItem;
+                eval_combobx_val = selectedEval.Content.ToString();
+                CheckValidations();
+            }
         }
     }
 }

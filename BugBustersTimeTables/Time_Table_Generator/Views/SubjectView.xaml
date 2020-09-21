@@ -64,5 +64,13 @@
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
         </ComboBox>
+        <TextBlock x:Name="year_tb" HorizontalAlignment="Left" Margin="192,146,0,0" TextWrapping="Wrap" Text="Year is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
+        <TextBlock x:Name="code_tb" HorizontalAlignment="Left" Margin="192,103,0,0" TextWrapping="Wrap" Text="Subject code is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
+        <TextBlock x:Name="name_tb" HorizontalAlignment="Left" Margin="192,58,0,0" TextWrapping="Wrap" Text="Subject name is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
+        <TextBlock x:Name="sem_tb" HorizontalAlignment="Left" Margin="192,186,0,0" TextWrapping="Wrap" Text="Semester is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
+        <TextBlock x:Name="lec_tb" HorizontalAlignment="Left" Margin="192,230,0,0" TextWrapping="Wrap" Text="No of lecture hrs. is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
+        <TextBlock x:Name="tute_tb" HorizontalAlignment="Left" Margin="192,274,0,0" TextWrapping="Wrap" Text="No of tutorial hrs. is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
+        <TextBlock x:Name="lab_tb" HorizontalAlignment="Left" Margin="192,319,0,0" TextWrapping="Wrap" Text="No of lab hrs. is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
+        <TextBlock x:Name="eval_tb" HorizontalAlignment="Left" Margin="192,363,0,0" TextWrapping="Wrap" Text="No of evalutaion hrs. is required." VerticalAlignment="Top" Foreground="#FFEA0C0C" FontSize="11" Visibility="Hidden"/>
     </Grid>
 </Page>

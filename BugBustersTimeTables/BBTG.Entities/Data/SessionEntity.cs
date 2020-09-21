@@ -16,7 +16,7 @@ namespace BBTG.Entities.Data
         public string SubjectCode { get; set; }
         public string Tag { get; set; }
         public string GroupId { get; set; }
-        public StudentEntity SessionGrp { get; set; }
+        //public StudentEntity SessionGrp { get; set; }
         public int Count { get; set; }
         public int Duration { get; set; }
 

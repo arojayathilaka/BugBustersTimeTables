@@ -44,7 +44,7 @@
             <ComboBoxItem>8</ComboBoxItem>
             <ComboBoxItem>9</ComboBoxItem>
         </ComboBox>
-        <Button x:Name="group_btn" Content="Add Group" HorizontalAlignment="Right" Margin="0,37,927,0" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="group_btn" Content="Add Group" HorizontalAlignment="Right" Margin="0,37,927,0" VerticalAlignment="Top" Width="90" Click="group_btn_Click"/>
         <Button x:Name="sub_group_btn" Content="Add Sub-Group" HorizontalAlignment="Right" Margin="0,84,927,0" VerticalAlignment="Top" Width="90" Click="sub_group_btn_Click"/>
         <Button x:Name="add_btn_" Content="Add" HorizontalAlignment="Left" Margin="198,378,0,0" VerticalAlignment="Top" Width="75" Click="add_btn__Click"/>
         <Button x:Name="update_btn_" Content="Update" HorizontalAlignment="Left" Margin="288,378,0,0" VerticalAlignment="Top" Width="75" Click="update_btn__Click"/>

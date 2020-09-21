@@ -22,9 +22,44 @@ namespace Time_Table_Generator.ViewModel
             return _sessionData.LoadData();
         }
 
-        public void SaveSessionData(SessionEntity Session)
+        public List<SessionEntity> LoadSessionDataBySubject(string subjectCode)
         {
-            _sessionData.SaveData(Session);
+            return _sessionData.LoadData().FindAll(s => s.SubjectCode == subjectCode);
+        }
+
+        public List<SessionEntity> LoadSessionDataByGroup(string group)
+        {
+            return _sessionData.LoadData().FindAll(s => s.GroupId == group);
+        }
+
+        public List<SessionEntity> LoadSessionDataBySubGroup(string subGroup)
+        {
+            return _sessionData.LoadData().FindAll(s => s.GroupId == subGroup);
+        }
+
+        public List<SessionEntity> LoadSessionDataByTag(string tag)
+        {
+            return _sessionData.LoadData().FindAll(s => s.Tag == tag);
+        }
+
+        public List<SessionEntity> LoadSessionDataByLecturer(int lecturerId)
+        {
+            return _sessionData.LoadData().FindAll(s =>
+            {
+                for (int i = 0; i < s.LecturerIdsArr.Length; i++)
+                {
+                    if (s.LecturerIdsArr[i] == lecturerId)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            });
+        }
+
+        public void SaveSessionData(SessionEntity session)
+        {
+            _sessionData.SaveData(session);
         }
     }
 }
