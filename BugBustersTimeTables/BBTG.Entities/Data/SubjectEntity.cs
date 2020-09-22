@@ -17,32 +17,5 @@ namespace BBTG.Entities.Data
         public int NoOfTuteHrs { get; set; }
         public int NoOfLabHrs { get; set; }
         public int NoOfEvalHrs { get; set; }
-
-        public SubjectEntity()
-        {
-
-        }
-
-        public SubjectEntity(
-            int SubjectId, 
-            string SubjectCode, 
-            string SubjectName, 
-            int Year, 
-            int Semester, 
-            int NoOfLecHrs, 
-            int NoOfTuteHrs, 
-            int NoOfLabHrs, 
-            int NoOfEvalHrs)
-        {
-            this.SubjectId = SubjectId;
-            this.SubjectCode = SubjectCode;
-            this.SubjectName = SubjectName;
-            this.Year = Year;
-            this.Semester = Semester;
-            this.NoOfLecHrs = NoOfLecHrs;
-            this.NoOfTuteHrs = NoOfTuteHrs;
-            this.NoOfLabHrs = NoOfLabHrs;
-            this.NoOfEvalHrs = NoOfEvalHrs;
-        }
     }
 }

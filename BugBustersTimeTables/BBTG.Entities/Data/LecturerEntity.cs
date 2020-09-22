@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BBTG.Entities.Data
 {
-    public class LecturerEntity
+    public class LecturerEntity : IDataErrorInfo
     {
-        public int EmployeeId { get; set; }
+        public int EmployeeId { get; set; } 
         public string Name { get; set; }
         public string Faculty { get; set; }
         public string Department { get; set; }
@@ -14,22 +15,25 @@ namespace BBTG.Entities.Data
         public string Building { get; set; }
         public int Level { get; set; }
         public double Rank { get; set; }
-
-        public LecturerEntity()
+        string IDataErrorInfo.Error
         {
-
+            get { return null; }
         }
 
-        public LecturerEntity(int EmployeeId, string Name, string Faculty, string Department, string Center, string Building, int Level, double Rank)
+        string IDataErrorInfo.this[string columnName]
         {
-            this.EmployeeId = EmployeeId;
-            this.Name = Name;
-            this.Faculty = Faculty;
-            this.Department = Department;
-            this.Center = Center;
-            this.Building = Building;
-            this.Level = Level;
-            this.Rank = Rank;
-        }      
+            get
+            {
+                if (columnName == "Name")
+                {
+                    // Validate property and return a string if there is an error
+                    if (string.IsNullOrEmpty(Name))
+                        return "Name is Required";
+                }
+
+                // If there's no error, null gets returned
+                return null;
+            }
+        }
     }
 }

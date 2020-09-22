@@ -19,6 +19,11 @@ namespace Time_Table_Generator.ViewModel
             return _lecturerData.LoadData();
         }
 
+        public LecturerEntity LoadLecturerDataById(int id)
+        {
+            return _lecturerData.LoadData().Find(e => e.EmployeeId == id);
+        }
+
         public void SaveLecturerData(LecturerEntity lecturer)
         {
             _lecturerData.SaveData(lecturer);

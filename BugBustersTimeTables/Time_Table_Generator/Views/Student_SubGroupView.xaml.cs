@@ -159,7 +159,6 @@ namespace Time_Table_Generator.View
             int SubGroupNumber = int.Parse(subGroupNumber_combobx.Text);
             string SubGroupId = subGroupId_txtbx.Text;
 
-
             student = new Student_SubGroupEntity(StudentId, AcademicYrSem, Programme, GroupNumber, GroupId, SubGroupNumber, SubGroupId);
             return student;
         }

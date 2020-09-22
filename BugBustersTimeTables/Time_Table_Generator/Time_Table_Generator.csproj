@@ -83,6 +83,7 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -97,6 +98,7 @@
     <Compile Include="ViewModel\CenterViewModel.cs" />
     <Compile Include="ViewModel\ParallelSessionViewModel.cs" />
     <Compile Include="ViewModel\Student_GroupViewModel.cs" />
+    <Compile Include="ViewModel\SessionViewModel.cs" />
     <Compile Include="ViewModel\TagViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\FacultyViewModel.cs" />
@@ -116,14 +118,17 @@
     <Compile Include="Views\LecturerView.xaml.cs">
       <DependentUpon>LecturerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SessionAddView.xaml.cs">
+      <DependentUpon>SessionAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SessionsView.xaml.cs">
+      <DependentUpon>SessionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ManageWorkView.xaml.cs">
       <DependentUpon>ManageWorkView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SessionView.xaml.cs">
       <DependentUpon>SessionView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\StudentTimetable.xaml.cs">
-      <DependentUpon>StudentTimetable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Student_GroupView.xaml.cs">
       <DependentUpon>Student_GroupView.xaml</DependentUpon>
@@ -165,6 +170,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SessionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Student_GroupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,7 +194,7 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="Views\SessionView.xaml">
+    <Page Include="Views\SessionAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
