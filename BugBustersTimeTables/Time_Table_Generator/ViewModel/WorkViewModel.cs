@@ -26,6 +26,11 @@ namespace Time_Table_Generator.ViewModel
             return _workData.LoadWorkData();
         }
 
+        public List<WorkEntity> LoadWorkingDaysData(int ID)
+        {
+            return _workData.LoadWorkingDays(ID);
+        }
+
         public void DeleteWorkData(int ID)
         {
             _workData.DeleteData(ID);

@@ -32,6 +32,14 @@ namespace BBTG.DataAccess
             }
         }
 
+        public List<WorkEntity> LoadWorkingDays(int ID)
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                return con.Query<WorkEntity>("SELECT WorkingDays, TimeSlotStartTime, TimeSlotEndTime FROM WorkTable WHERE ID =" + ID, new DynamicParameters()).ToList();
+            }
+        }
+
         public void DeleteData(int ID)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))

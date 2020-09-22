@@ -262,6 +262,14 @@ namespace Time_Table_Generator.Views
 
         }
 
+        private void timetable_view_click(object sender, RoutedEventArgs e)
+        {
+
+            LecturerTimetable timetableView = new LecturerTimetable();
+            this.NavigationService.Navigate(timetableView);
+
+        }
+
         private void Chk_sat_Checked(object sender, RoutedEventArgs e)
         {
 
