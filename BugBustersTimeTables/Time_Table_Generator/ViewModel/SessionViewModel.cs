@@ -162,5 +162,10 @@ namespace Time_Table_Generator.ViewModel
         {
             _sessionData.SaveData(session);
         }
+
+        public void DeleteSessionData()
+        {
+            _sessionData.DeleteData();
+        }
     }
 }

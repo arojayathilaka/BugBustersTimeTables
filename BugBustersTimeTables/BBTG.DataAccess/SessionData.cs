@@ -51,5 +51,20 @@ namespace BBTG.DataAccess
                 }
             }
         }
+
+        public void DeleteData()
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                try
+                {
+                    con.Execute("DELETE FROM Session");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
     }
 }
