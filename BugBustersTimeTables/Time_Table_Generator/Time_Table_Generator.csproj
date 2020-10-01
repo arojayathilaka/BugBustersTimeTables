@@ -127,9 +127,6 @@
     <Compile Include="Views\ManageWorkView.xaml.cs">
       <DependentUpon>ManageWorkView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SessionView.xaml.cs">
-      <DependentUpon>SessionView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Student_GroupView.xaml.cs">
       <DependentUpon>Student_GroupView.xaml</DependentUpon>
     </Compile>
