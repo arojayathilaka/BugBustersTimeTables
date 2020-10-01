@@ -62,8 +62,16 @@
                 <RowDefinition Height="163*"/>
                 <RowDefinition Height="641*"/>
             </Grid.RowDefinitions>
+            <Button x:Name="Manage_Work_btn_Copy" Content="Manage Work" HorizontalAlignment="Left" Margin="10,95.4,0,0" VerticalAlignment="Top" Width="229" Height="56" Click="manage_work_click" Foreground="White" FontWeight="Bold" FontSize="22" Grid.Row="2">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                        <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
-        <Button x:Name="Manage_Work_btn" Content="Manage Work" HorizontalAlignment="Left" Margin="10,317,0,0" VerticalAlignment="Top" Width="229" Height="56" Click="manage_work_click" Foreground="White" FontWeight="Bold" FontSize="22">
+        <Button x:Name="Timetable_View_btn" Content="Timetables" HorizontalAlignment="Left" Margin="10,418,0,0" VerticalAlignment="Top" Width="229" Height="56" Click="timetable_view_click" Foreground="White" FontWeight="Bold" FontSize="22">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FFC54A62" Offset="0.013"/>

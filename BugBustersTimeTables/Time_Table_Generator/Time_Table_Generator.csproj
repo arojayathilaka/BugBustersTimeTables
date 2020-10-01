@@ -112,6 +112,9 @@
     <Compile Include="Views\BuildingView.xaml.cs">
       <DependentUpon>BuildingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LecturerTimetable.xaml.cs">
+      <DependentUpon>LecturerTimetable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LecturerView.xaml.cs">
       <DependentUpon>LecturerView.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,9 @@
     </Compile>
     <Compile Include="Views\ManageWorkView.xaml.cs">
       <DependentUpon>ManageWorkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SessionView.xaml.cs">
+      <DependentUpon>SessionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Student_GroupView.xaml.cs">
       <DependentUpon>Student_GroupView.xaml</DependentUpon>
@@ -152,7 +158,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\LecturerTimetable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ManageWorkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StudentTimetable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

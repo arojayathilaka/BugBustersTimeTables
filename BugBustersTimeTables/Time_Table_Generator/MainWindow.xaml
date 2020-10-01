@@ -19,23 +19,23 @@
             <ColumnDefinition Width="88*"/>
         </Grid.ColumnDefinitions>
         <Image x:Name="logo" HorizontalAlignment="Left" Margin="28,1,0,0" VerticalAlignment="Top" Width="60" Height="75" Source="Images/SLIIT_Logo_Crest.png"/>
-        <StackPanel Orientation="Horizontal" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="116,0,28.5,0">
-            <Button x:Name="lecturer_btn" Content="Lecturers" MinWidth="100" Click="lecturer_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+        <StackPanel Orientation="Horizontal" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,0,0,0">
+            <Button x:Name="lecturer_btn" Content="Lecturers" MinWidth="80" Click="lecturer_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/lecturer.jpg"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="subject_btn" Content="Subjects" MinWidth="100" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="subject_btn" Content="Subjects" MinWidth="80" Click="subject_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/subjects.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="location_btn" Content="Locations" MinWidth="100" Click="location_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="location_btn" Content="Locations" MinWidth="80" Click="location_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/location.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="working_btn" MinWidth="100" Click="working_btn_Click" Width="109">
+            <Button x:Name="working_btn" MinWidth="80" Click="working_btn_Click" Width="109">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/calender.jpg" Stretch="UniformToFill"/>
                 </Button.Background>
@@ -51,17 +51,22 @@
                     <ImageBrush ImageSource="Images/student.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="tags_btn" Content="Tags" MinWidth="100" Click="tag_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="tags_btn" Content="Tags" MinWidth="80" Click="tag_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/tags.jpeg"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="stats_btn" Content="Statistics" MinWidth="100" Click="stats_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="stats_btn" Content="Statistics" MinWidth="80" Click="stats_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/stats.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="session_btn" Content="Sessions" MinWidth="100" Click="session_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="session_btn" Content="Sessions" MinWidth="80" Click="session_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/session.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="sessio_btn" Content="Sessions" MinWidth="80" Click="session_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/session.jpg"/>
                 </Button.Background>

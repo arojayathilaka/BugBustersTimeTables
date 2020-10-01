@@ -31,7 +31,6 @@ namespace Time_Table_Generator.Views
             InitializeComponent();
             _viewModel = new WorkViewModel();
             var x = _viewModel.LoadData();
-            //DataTable dataTable = new System.Data.DataTable();
             view_grid.ItemsSource = x;
         }
 
@@ -63,7 +62,6 @@ namespace Time_Table_Generator.Views
                 working_hours_no_txt.Text = work.noOfWorkingHours.ToString();
                 startTime_txt.Text = work.timeSlotStartTime.ToString();
                 endTime_txt.Text = work.timeSlotEndTime.ToString();
-
 
                 String res = work.workingDays.ToString();
 
