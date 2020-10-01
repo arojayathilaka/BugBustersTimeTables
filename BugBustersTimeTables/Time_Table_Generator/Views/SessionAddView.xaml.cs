@@ -197,7 +197,7 @@ namespace Time_Table_Generator.View
             }
             else if (searchby_combobx.Text == "Subject")
             {
-                isSubFilter = true;
+                if (isLecFilter) isSubFilter = true;
             }
             MessageBox.Show("Filter Added", "BBTG", MessageBoxButton.OK, MessageBoxImage.Information);
         }
