@@ -69,11 +69,11 @@
         <ListBox x:Name="lec_listbx" HorizontalAlignment="Left" Height="60" Margin="192,68.8,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.623,0.758" Grid.Row="1" Foreground="#FF213483"/>
         <Label Content="Filter By:" HorizontalAlignment="Left" Margin="367,26,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#FF213483" FontSize="14"/>
         <ComboBox x:Name="searchby_combobx" HorizontalAlignment="Left" Margin="435,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="searchby_combobx_SelectionChanged" Foreground="#FF213483">
+            <ComboBoxItem>Lecturer</ComboBoxItem>
             <ComboBoxItem>Subject</ComboBoxItem>
             <ComboBoxItem>Group</ComboBoxItem>
             <ComboBoxItem>Sub Group</ComboBoxItem>
             <ComboBoxItem>Tag</ComboBoxItem>
-            <ComboBoxItem>Lecturer</ComboBoxItem>
         </ComboBox>
         <ComboBox x:Name="search_combobx" HorizontalAlignment="Left" Margin="565,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" GotFocus="search_combobx_GotFocus" Foreground="#FF213483"/>
         <Button x:Name="add_filter_btn"  Content="Add Filter" HorizontalAlignment="Left" Margin="694,29,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="75" Background="#FF1560FF" Foreground="#FFFF9900" Click="add_filter_btn_Click"/>
