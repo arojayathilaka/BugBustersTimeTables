@@ -11,10 +11,9 @@ using System.Windows;
 
 namespace BBTG.DataAccess
 {
-    public class ParallelSessionData
+    public class ConsecutiveSessionData
     {
-
-        public List<ParallelSessionEntity> LoadData()
+        public List<ConsecutiveSessionEntity> LoadData()
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -24,24 +23,25 @@ namespace BBTG.DataAccess
                     sb.AppendLine("SELECT");
                     sb.AppendLine("*");
                     sb.AppendLine("FROM");
-                    sb.AppendLine("ParallelSession");
+                    sb.AppendLine("ConsecutiveSession");
 
-                    return con.Query<ParallelSessionEntity>(sb.ToString(), new DynamicParameters()).ToList();
+                    return con.Query<ConsecutiveSessionEntity>(sb.ToString(), new DynamicParameters()).ToList();
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
-                    return new List<ParallelSessionEntity>();
+                    return new List<ConsecutiveSessionEntity>();
                 }
             }
         }
-        public void UpdateData(ParallelSessionEntity parallelSession)
+
+        public void UpdateData(ConsecutiveSessionEntity ConsecutiveSession)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("UPDATE ParallelSession SET Ses1=@Ses1, Ses2=@Ses2, Day=@Day, STime=@STime, ETime=@ETime WHERE ParallelSessionId=@ParallelSessionId", parallelSession);
+                    con.Execute("UPDATE ConsecutiveSession SET Ses1=@Ses1, Ses2=@Ses2 WHERE ConsId=@ConsId", ConsecutiveSession);
                 }
                 catch (Exception e)
                 {
@@ -50,13 +50,13 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void SaveData(ParallelSessionEntity parallelSession)
+        public void SaveData(ConsecutiveSessionEntity ConsecutiveSession)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("INSERT INTO ParallelSession (ParallelSessionId, Ses1, Ses2, Day, STime, ETime) values (@ParallelSessionId, @Ses1, @Ses2, @Day, @STime, @ETime)", parallelSession);
+                    con.Execute("INSERT INTO ConsecutiveSession (ConsId, Ses1, Ses2) values (@ConsId, @Ses1, @Ses2)", ConsecutiveSession);
                 }
                 catch (Exception e)
                 {
@@ -64,21 +64,5 @@ namespace BBTG.DataAccess
                 }
             }
         }
-
-        public void DeleteData(int ParallelSessionId)
-        {
-            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
-            {
-                try
-                {
-                    con.Execute("DELETE FROM ParallelSession WHERE ParallelSessionId=" + ParallelSessionId);
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                }
-            }
-        }
-
     }
 }

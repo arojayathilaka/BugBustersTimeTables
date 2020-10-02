@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Time_Table_Generator.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="1100"
+      d:DesignHeight="450" d:DesignWidth="1300"
       Title="SessionAddView" Loaded="Session_Page_Loaded">
     <Grid>
         <Grid.RowDefinitions>
@@ -36,15 +36,15 @@
                 </Button.Background>
             </Button>
         </Grid>-->
-        <DataGrid x:Name="session_data_grid" HorizontalAlignment="Left" Height="358" Margin="370,67,0,0" VerticalAlignment="Top" Width="616" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" Foreground="#FF0B2283" Grid.Row="1"/>
-        <Label Content="Subject :" HorizontalAlignment="Left" Margin="52,187,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
-        <Label Content="Subject Code :" HorizontalAlignment="Left" Margin="52,145,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
-        <Label Content="Tag :" HorizontalAlignment="Left" Margin="52,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
-        <Label Content="Group ID :" HorizontalAlignment="Left" Margin="52,271,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
-        <Label Content="Student Count :" HorizontalAlignment="Left" Margin="52,319,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
-        <Label Content="Duration :" HorizontalAlignment="Left" Margin="52,365,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
-        <Label Content="Lecturer(s) :" HorizontalAlignment="Left" Margin="52,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.154" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
-        <ComboBox x:Name="lecturer_combobx" HorizontalAlignment="Left" Margin="52,29,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.525,1.636" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22" DisplayMemberPath="Name" Grid.Row="1"/>
+        <DataGrid x:Name="session_data_grid" HorizontalAlignment="Left" Height="358" Margin="610,69.8,0,0" VerticalAlignment="Top" Width="616" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" Foreground="#FF0B2283" Grid.Row="1"/>
+        <Label Content="Subject :" HorizontalAlignment="Left" Margin="292,189.8,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
+        <Label Content="Subject Code :" HorizontalAlignment="Left" Margin="292,147.8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.038" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
+        <Label Content="Tag :" HorizontalAlignment="Left" Margin="292,233.8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.658,0.115" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
+        <Label Content="Group ID :" HorizontalAlignment="Left" Margin="292,273.8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.038" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
+        <Label Content="Student Count :" HorizontalAlignment="Left" Margin="292,321.8,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
+        <Label Content="Duration :" HorizontalAlignment="Left" Margin="292,367.8,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
+        <Label Content="Lecturer(s) :" HorizontalAlignment="Left" Margin="292,87.8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.154" FontSize="14" Foreground="#FF213483" Grid.Row="1"/>
+        <ComboBox x:Name="lecturer_combobx" HorizontalAlignment="Left" Margin="292,31.8,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.525,1.636" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22" DisplayMemberPath="Name" Grid.Row="1"/>
         <!--<ComboBox x:Name="lecturer_combobx" HorizontalAlignment="Left" Margin="191,35,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.525,1.636" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22" SelectionChanged="lecturer_combobx_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -55,9 +55,50 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>-->
-        <TextBox x:Name="subject_txtbx" HorizontalAlignment="Left" Margin="192,191,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.525,1.636" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22" Grid.Row="1" IsEnabled="False"/>
-        <Button x:Name="create_btn_" Content="Create Session" HorizontalAlignment="Left" Margin="50,403,0,0" VerticalAlignment="Top" Width="86" Click="create_btn__Click" Background="#FF1560FF" Foreground="#FFFF9900" RenderTransformOrigin="0.52,-1" Height="24" Grid.Row="1"/>
-        <ComboBox x:Name="duration_combobx" HorizontalAlignment="Left" Margin="192,365,0,0" VerticalAlignment="Top"  MinWidth="120" Foreground="#FF213483" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Grid.Row="1" SelectionChanged="duration_combobx_SelectionChanged">
+
+        <Grid HorizontalAlignment="Left" Height="901" Margin="-4,-1,0,-450.4" VerticalAlignment="Top" Width="249" Background="#FF0E0E32" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="58*"/>
+                <RowDefinition Height="163*"/>
+                <RowDefinition Height="641*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="allocatna_btn" Content="Allocate N/A Time" HorizontalAlignment="Left" Margin="10,84.2,0,0" VerticalAlignment="Top" Width="229" Height="56" Foreground="White" FontWeight="Bold" FontSize="22" Grid.Row="1" Click="allocatna_btn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                        <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="consecutivesession_btn" Content="Consecutive Sessions" HorizontalAlignment="Left" Margin="10,169.2,0,0" VerticalAlignment="Top" Width="229" Height="56" Foreground="White" FontWeight="Bold" FontSize="22" Grid.Row="1" Grid.RowSpan="2" Click="consecutivesession_btn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                        <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="parallelsession_btn" Content="Parallel Sessions" HorizontalAlignment="Left" Margin="10,81.2,0,0" VerticalAlignment="Top" Width="229" Height="56" Foreground="White" FontWeight="Bold" FontSize="22" Grid.Row="2" Click="parallelsession_btn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                        <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="sessionAdd_btn" Content="Add Session" HorizontalAlignment="Left" Margin="10,0.2,0,0" VerticalAlignment="Top" Width="229" Height="56" Foreground="White" FontWeight="Bold" FontSize="22" Grid.Row="1" Click="sessionAdd_btn_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                        <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        <TextBox x:Name="subject_txtbx" HorizontalAlignment="Left" Margin="432,193.8,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.525,1.636" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Foreground="#FF213483" Height="22" Grid.Row="1" IsEnabled="False"/>
+        <Button x:Name="create_btn_" Content="Create Session" HorizontalAlignment="Left" Margin="290,405.8,0,0" VerticalAlignment="Top" Width="86" Click="create_btn__Click" Background="#FF1560FF" Foreground="#FFFF9900" RenderTransformOrigin="0.52,-1" Height="24" Grid.Row="1"/>
+        <ComboBox x:Name="duration_combobx" HorizontalAlignment="Left" Margin="432,367.8,0,0" VerticalAlignment="Top"  MinWidth="120" Foreground="#FF213483" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" Grid.Row="1" SelectionChanged="duration_combobx_SelectionChanged">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
         </ComboBox>

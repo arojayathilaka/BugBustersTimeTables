@@ -96,9 +96,14 @@
     <Compile Include="StartUp.cs" />
     <Compile Include="ViewModel\BuildingViewModel.cs" />
     <Compile Include="ViewModel\CenterViewModel.cs" />
+    <Compile Include="ViewModel\ConsecutiveSessionViewModel.cs" />
+    <Compile Include="ViewModel\GroupNAViewModel.cs" />
+    <Compile Include="ViewModel\LecturerNAViewModel.cs" />
     <Compile Include="ViewModel\ParallelSessionViewModel.cs" />
+    <Compile Include="ViewModel\SessionNAViewModel.cs" />
     <Compile Include="ViewModel\Student_GroupViewModel.cs" />
     <Compile Include="ViewModel\SessionViewModel.cs" />
+    <Compile Include="ViewModel\SubGroupNAViewModel.cs" />
     <Compile Include="ViewModel\TagViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\FacultyViewModel.cs" />
@@ -109,8 +114,20 @@
     <Compile Include="Views\AddWorkView.xaml.cs">
       <DependentUpon>AddWorkView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AllocateNATimeView.xaml.cs">
+      <DependentUpon>AllocateNATimeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BuildingView.xaml.cs">
       <DependentUpon>BuildingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsecutiveSessionView.xaml.cs">
+      <DependentUpon>ConsecutiveSessionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GroupNaView.xaml.cs">
+      <DependentUpon>GroupNaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LecturerNAView.xaml.cs">
+      <DependentUpon>LecturerNAView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LecturerTimetable.xaml.cs">
       <DependentUpon>LecturerTimetable.xaml</DependentUpon>
@@ -118,8 +135,14 @@
     <Compile Include="Views\LecturerView.xaml.cs">
       <DependentUpon>LecturerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ParallelSessionView.xaml.cs">
+      <DependentUpon>ParallelSessionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SessionAddView.xaml.cs">
       <DependentUpon>SessionAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SessionNAView.xaml.cs">
+      <DependentUpon>SessionNAView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SessionsView.xaml.cs">
       <DependentUpon>SessionsView.xaml</DependentUpon>
@@ -129,6 +152,9 @@
     </Compile>
     <Compile Include="Views\Student_GroupView.xaml.cs">
       <DependentUpon>Student_GroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubGroupNaView.xaml.cs">
+      <DependentUpon>SubGroupNaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SubjectView.xaml.cs">
       <DependentUpon>SubjectView.xaml</DependentUpon>
@@ -155,11 +181,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AllocateNATimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConsecutiveSessionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GroupNaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LecturerNAView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LecturerTimetable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ManageWorkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParallelSessionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SessionNAView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Student_SubGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubGroupNaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

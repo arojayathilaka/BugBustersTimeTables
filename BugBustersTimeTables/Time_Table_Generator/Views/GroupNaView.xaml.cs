@@ -20,39 +20,35 @@ using Time_Table_Generator.ViewModel;
 namespace Time_Table_Generator.Views
 {
     /// <summary>
-    /// Interaction logic for ParallelSessionView.xaml
+    /// Interaction logic for GroupNAView.xaml
     /// </summary>
-    public partial class ParallelSessionView : Page
+
+
+    public partial class GroupNAView : Page
     {
 
-        ParallelSessionViewModel parallelSessionViewModel;
-        ParallelSessionEntity parallelSessionEntity;
+        GroupNAViewModel groupNAViewModel;
+        GroupNAEntity groupNAEntity;
+        Student_GroupView student_GroupViewModel;
+        Student_GroupEntity student_GroupEntity;
+        List<GroupNAEntity> groupNAs;
 
-        SessionViewModel sessionViewModel;
-        SessionEntity sessionEntity;
-        List<ParallelSessionEntity> parallelSessions;
-
-        public ParallelSessionView()
+        public GroupNAView()
         {
             InitializeComponent();
         }
-
-        private void Parallel_Session_Page_loaded(object sender, RoutedEventArgs e)
+        private void Group_NA_Page_loaded(object sender, RoutedEventArgs e)
         {
-            parallelSessionViewModel = new ParallelSessionViewModel();
-            sessionViewModel = new SessionViewModel();
-
-            session1_combobx.ItemsSource = sessionViewModel.LoadSessionData();
-            session2_combobx.ItemsSource = sessionViewModel.LoadSessionData();
-            parallelSessions = parallelSessionViewModel.LoadParallelSessionData();
+            groupNAViewModel = new GroupNAViewModel();
+            groupNAs = groupNAViewModel.LoadGroupNAData();
         }
 
         private void add_btn__Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                parallelSessionEntity = CreateParellelSessionEntity();
-                parallelSessionViewModel.SaveParallelSessionData(parallelSessionEntity);
+                groupNAEntity = CreateGroupNAEntity();
+                groupNAViewModel.SaveGroupNAData(groupNAEntity);
                 MessageBoxResult result = MessageBox.Show("Successfully Added!", "BBTG");
                 ClearAll();
             }
@@ -64,11 +60,24 @@ namespace Time_Table_Generator.Views
 
         public void ClearAll()
         {
-            session1_combobx.Text = "";
-            session2_combobx.Text = "";
+            group_combobx.Text = "";
             day_combobx.Text = "";
             starttime_combobx.Text = "";
             endtime_combobx.Text = "";
+        }
+
+        private GroupNAEntity CreateGroupNAEntity()
+        {
+            int GroupId;
+            GroupId = groupNAs.Last().GroupId + 1;
+
+            string GroupNumber = group_combobx.Text;
+            string Day = day_combobx.Text;
+            string STime = starttime_combobx.Text;
+            string ETime = endtime_combobx.Text;
+
+            groupNAEntity = new GroupNAEntity(GroupId, GroupNumber, Day, STime, ETime);
+            return groupNAEntity;
         }
 
         private void sessionAdd_btn_Click(object sender, RoutedEventArgs e)
@@ -85,37 +94,17 @@ namespace Time_Table_Generator.Views
 
         private void consecutivesession_btn_Click(object sender, RoutedEventArgs e)
         {
-            ConsecutiveSessionView consecutiveSessionView = new ConsecutiveSessionView();
-            this.NavigationService.Navigate(consecutiveSessionView);
+            SessionAddView sessionAddView = new SessionAddView();
+            this.NavigationService.Navigate(sessionAddView);
         }
 
         private void parallelsession_btn_Click(object sender, RoutedEventArgs e)
         {
-            ParallelSessionView parallelSessionView = new ParallelSessionView();
-            this.NavigationService.Navigate(parallelSessionView);
+            SessionAddView sessionAddView = new SessionAddView();
+            this.NavigationService.Navigate(sessionAddView);
         }
 
-        private ParallelSessionEntity CreateParellelSessionEntity()
-        {
-            int ParallelSessionId;
-            ParallelSessionId = parallelSessions.Last().ParallelSessionId + 1;
-
-            string Ses1 = session1_combobx.Text;
-            string Ses2 = session2_combobx.Text;
-            string Day = day_combobx.Text;
-            string STime = starttime_combobx.Text;
-            string ETime = endtime_combobx.Text;
-
-            parallelSessionEntity = new ParallelSessionEntity(ParallelSessionId, Ses1, Ses2, Day, STime, ETime);
-            return parallelSessionEntity;
-        }
-
-        private void session1_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void session2_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void group_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

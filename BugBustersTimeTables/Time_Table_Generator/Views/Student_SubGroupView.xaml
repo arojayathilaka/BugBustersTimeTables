@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Time_Table_Generator.View"
       mc:Ignorable="d"
-      Title="StudentView" Loaded="Student_Page_Loaded" Height="563.309" Width="1334.712">
+      d:DesignHeight="450" d:DesignWidth="1100"
+      Title="StudentView" Loaded="Student_Page_Loaded">
 
     <Grid>
         <Grid.Background>
@@ -14,8 +15,8 @@
                 <GradientStop Color="White" Offset="0.178"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="groupId_txtbx" HorizontalAlignment="Left" Height="23" Margin="418,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.014,0.252" TextChanged="groupId_txtbx_SelectionChanged" />
-        <ComboBox x:Name="academicYrSem_combobx" HorizontalAlignment="Left" Margin="418,49,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="academicYrSem_combobx_TextChanged">
+        <TextBox x:Name="groupId_txtbx" HorizontalAlignment="Left" Height="23" Margin="450,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.014,0.252" TextChanged="groupId_txtbx_SelectionChanged" />
+        <ComboBox x:Name="academicYrSem_combobx" HorizontalAlignment="Left" Margin="451,57,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="academicYrSem_combobx_TextChanged">
             <ComboBoxItem>Y1.S1</ComboBoxItem>
             <ComboBoxItem>Y1.S2</ComboBoxItem>
             <ComboBoxItem>Y2.S1</ComboBoxItem>
@@ -25,14 +26,14 @@
             <ComboBoxItem>Y4.S1</ComboBoxItem>
             <ComboBoxItem>Y4.S2</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="programme_combobx" HorizontalAlignment="Left" Margin="418,99,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="programme_combobx_SelectionChanged" >
+        <ComboBox x:Name="programme_combobx" HorizontalAlignment="Left" Margin="451,107,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="programme_combobx_SelectionChanged" >
             <ComboBoxItem>IT</ComboBoxItem>
             <ComboBoxItem>SE</ComboBoxItem>
             <ComboBoxItem>CSSE</ComboBoxItem>
             <ComboBoxItem>CSE</ComboBoxItem>
             <ComboBoxItem>IM</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="groupNumber_combobx" HorizontalAlignment="Left" Margin="418,149,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="groupNumber_combobx_SelectionChanged">
+        <ComboBox x:Name="groupNumber_combobx" HorizontalAlignment="Left" Margin="451,157,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="groupNumber_combobx_SelectionChanged">
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>
@@ -43,7 +44,7 @@
             <ComboBoxItem>8</ComboBoxItem>
             <ComboBoxItem>9</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="subGroupNumber_combobx" HorizontalAlignment="Left" Margin="418,249,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="subGroupNumber_combobx_SelectionChanged">
+        <ComboBox x:Name="subGroupNumber_combobx" HorizontalAlignment="Left" Margin="451,257,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="subGroupNumber_combobx_SelectionChanged">
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>
@@ -54,19 +55,40 @@
             <ComboBoxItem>8</ComboBoxItem>
             <ComboBoxItem>9</ComboBoxItem>
         </ComboBox>
-        <Button x:Name="group_btn" Content="Add Group" HorizontalAlignment="Right" Margin="0,57,1136,0" VerticalAlignment="Top" Width="90" Click="group_btn_Click"/>
-        <Button x:Name="sub_group_btn" Content="Add Sub-Group" HorizontalAlignment="Right" Margin="0,107,1136,0" VerticalAlignment="Top" Width="90"/>
-        <TextBox x:Name="subGroupId_txtbx" HorizontalAlignment="Left" Height="23" Margin="418,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="subGroupId_txtbx_TextChanged"/>
-        <Button x:Name="add_btn_" Content="Add" HorizontalAlignment="Left" Margin="238,393,0,0" VerticalAlignment="Top" Width="75" Click="add_btn__Click"/>
-        <Button x:Name="update_btn_" Content="Update" HorizontalAlignment="Left" Margin="328,393,0,0" VerticalAlignment="Top" Width="75" Click="update_btn__Click"/>
-        <Button x:Name="delete_btn_" Content="Delete" HorizontalAlignment="Left" Margin="418,393,0,0" VerticalAlignment="Top" Width="75" Click="delete_btn__Click"/>
-        <Button x:Name="clear_all_btn_" Content="Clear" HorizontalAlignment="Left" Margin="508,393,0,0" VerticalAlignment="Top" Width="75" Click="clear_all_btn__Click"/>
-        <Label Content="Academic Year &amp; Semester :" HorizontalAlignment="Left" Margin="238,46,0,0" VerticalAlignment="Top"/>
-        <Label Content="Programme : " HorizontalAlignment="Left" Margin="238,96,0,0" VerticalAlignment="Top"/>
-        <Label Content="Group Number :" HorizontalAlignment="Left" Margin="238,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.083,0.266"/>
-        <Label Content="Group ID : " HorizontalAlignment="Left" Margin="238,196,0,0" VerticalAlignment="Top"/>
-        <Label Content="Sub-Group Number : " HorizontalAlignment="Left" Margin="238,249,0,0" VerticalAlignment="Top"/>
-        <Label Content="Sub-Group ID : " HorizontalAlignment="Left" Margin="238,299,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="student_data_grid" HorizontalAlignment="Left" Height="273" Margin="630,46,0,0" VerticalAlignment="Top" Width="582" SelectionChanged="student_data_grid_SelectionChanged" />
+        <Grid HorizontalAlignment="Left" Height="862" Margin="0,0,0,-0.4" VerticalAlignment="Top" Width="249" Background="#FF0E0E32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="58*"/>
+                <RowDefinition Height="163*"/>
+                <RowDefinition Height="641*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="group_btn" Content="Add Group" HorizontalAlignment="Left" Margin="10,75.4,0,0" VerticalAlignment="Top" Width="229" Height="56" Click="group_btn_Click" Foreground="White" FontWeight="Bold" FontSize="22" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                        <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Button x:Name="sub_group_btn" Content="Add Sub-Group" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="229" Height="56" Click="sub_group_btn_Click" Foreground="White" FontWeight="Bold" FontSize="22">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                    <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="subGroupId_txtbx" HorizontalAlignment="Left" Height="23" Margin="450,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="subGroupId_txtbx_TextChanged"/>
+        <Button x:Name="add_btn_" Content="Add" HorizontalAlignment="Left" Margin="271,401,0,0" VerticalAlignment="Top" Width="75" Click="add_btn__Click"/>
+        <Button x:Name="update_btn_" Content="Update" HorizontalAlignment="Left" Margin="361,401,0,0" VerticalAlignment="Top" Width="75" Click="update_btn__Click"/>
+        <Button x:Name="delete_btn_" Content="Delete" HorizontalAlignment="Left" Margin="451,401,0,0" VerticalAlignment="Top" Width="75" Click="delete_btn__Click"/>
+        <Button x:Name="clear_all_btn_" Content="Clear" HorizontalAlignment="Left" Margin="541,401,0,0" VerticalAlignment="Top" Width="75" Click="clear_all_btn__Click"/>
+        <Label Content="Academic Year &amp; Semester :" HorizontalAlignment="Left" Margin="271,54,0,0" VerticalAlignment="Top"/>
+        <Label Content="Programme : " HorizontalAlignment="Left" Margin="271,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Group Number :" HorizontalAlignment="Left" Margin="271,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.083,0.266"/>
+        <Label Content="Group ID : " HorizontalAlignment="Left" Margin="271,204,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sub-Group Number : " HorizontalAlignment="Left" Margin="271,257,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sub-Group ID : " HorizontalAlignment="Left" Margin="271,307,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="student_data_grid" HorizontalAlignment="Left" Height="273" Margin="633,56,0,0" VerticalAlignment="Top" Width="427" SelectionChanged="student_data_grid_SelectionChanged" />
     </Grid>
 </Page>

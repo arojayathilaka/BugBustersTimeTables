@@ -73,14 +73,19 @@
   <ItemGroup>
     <Compile Include="BuildingData.cs" />
     <Compile Include="CenterData.cs" />
+    <Compile Include="ConsecutiveSessionData.cs" />
     <Compile Include="DepartmentData.cs" />
     <Compile Include="FacultyData.cs" />
+    <Compile Include="GroupNAData.cs" />
     <Compile Include="LecturerData.cs" />
+    <Compile Include="LecturerNAData.cs" />
     <Compile Include="ParallelSessionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionNAData.cs" />
     <Compile Include="Student_GroupData.cs" />
     <Compile Include="Student_SubGroupData.cs" />
     <Compile Include="SessionData.cs" />
+    <Compile Include="SubGroupNAData.cs" />
     <Compile Include="SubjectData.cs" />
     <Compile Include="TagData.cs" />
     <Compile Include="WorkData.cs" />

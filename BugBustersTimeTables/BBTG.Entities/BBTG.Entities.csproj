@@ -44,13 +44,18 @@
   <ItemGroup>
     <Compile Include="Data\BuildingEntity.cs" />
     <Compile Include="Data\CenterEntity.cs" />
+    <Compile Include="Data\ConsecutiveSessionEntity.cs" />
+    <Compile Include="Data\GroupNAEntity.cs" />
+    <Compile Include="Data\LecturerNAEntity.cs" />
     <Compile Include="Data\ParallelSessionEntity.cs" />
+    <Compile Include="Data\SessionNAEntity.cs" />
     <Compile Include="Data\Student_GroupEntity.cs" />
     <Compile Include="Data\Student_SubGroupEntity.cs" />
     <Compile Include="Data\DepartmentEntity.cs" />
     <Compile Include="Data\FacultyEntity.cs" />
     <Compile Include="Data\LecturerEntity.cs" />
     <Compile Include="Data\SessionEntity.cs" />
+    <Compile Include="Data\SubGroupNAEntity.cs" />
     <Compile Include="Data\SubjectEntity.cs" />
     <Compile Include="Data\RoomEntity.cs" />
     <Compile Include="Data\TagEntity.cs" />
