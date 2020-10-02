@@ -44,6 +44,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -111,7 +112,6 @@
     <Compile Include="ViewModel\PrefferedRoomForLecturerViewModel.cs" />
     <Compile Include="ViewModel\PrefferedRoomForGroupViewModel.cs" />
     <Compile Include="ViewModel\PrefferedRoomForSessionViewModel.cs" />
-  
     <Compile Include="ViewModel\WorkViewModel.cs" />
     <Compile Include="Views\AddWorkView.xaml.cs">
       <DependentUpon>AddWorkView.xaml</DependentUpon>
@@ -161,7 +161,6 @@
     <Compile Include="Views\PrefferedRoomForSessionView.xaml.cs">
       <DependentUpon>PrefferedRoomForSessionView.xaml</DependentUpon>
     </Compile>
-    
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
