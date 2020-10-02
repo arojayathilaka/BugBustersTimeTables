@@ -152,9 +152,6 @@
     <Compile Include="Views\SessionNAView.xaml.cs">
       <DependentUpon>SessionNAView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SessionsView.xaml.cs">
-      <DependentUpon>SessionsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ManageWorkView.xaml.cs">
       <DependentUpon>ManageWorkView.xaml</DependentUpon>
     </Compile>
