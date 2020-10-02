@@ -24,7 +24,7 @@ namespace BBTG.DataAccess
                     sb.AppendLine("SELECT");
                     sb.AppendLine("*");
                     sb.AppendLine("FROM");
-                    sb.AppendLine("Student");
+                    sb.AppendLine("Student_Main_Group");
 
                     return con.Query<Student_GroupEntity>(sb.ToString(), new DynamicParameters()).ToList();
                 }
@@ -42,7 +42,7 @@ namespace BBTG.DataAccess
             {
                 try
                 {
-                    con.Execute("UPDATE Student SET AcademicYrSem=@AcademicYrSem, Programme=@Programme, GroupNumber=@GroupNumber, GroupId=@GroupId WHERE StudentId=@StudentId", student);
+                    con.Execute("UPDATE Student_Main_Group SET AcademicYrSem=@AcademicYrSem, Programme=@Programme, GroupNumber=@GroupNumber, GroupId=@GroupId WHERE StudentId=@StudentId", student);
                 }
                 catch (Exception e)
                 {
@@ -57,7 +57,7 @@ namespace BBTG.DataAccess
             {
                 try
                 {
-                    con.Execute("INSERT INTO Student (StudentId, AcademicYrSem, Programme, GroupNumber, GroupId) values (@StudentId, @AcademicYrSem, @Programme, @GroupNumber, @GroupId)", student);
+                    con.Execute("INSERT INTO Student_Main_Group (StudentId, AcademicYrSem, Programme, GroupNumber, GroupId) values (@StudentId, @AcademicYrSem, @Programme, @GroupNumber, @GroupId)", student);
                 }
                 catch (Exception e)
                 {
@@ -72,7 +72,7 @@ namespace BBTG.DataAccess
             {
                 try
                 {
-                    con.Execute("DELETE FROM Student WHERE StudentId=" + studentId);
+                    con.Execute("DELETE FROM Student_Main_Group WHERE StudentId=" + studentId);
                 }
                 catch (Exception e)
                 {

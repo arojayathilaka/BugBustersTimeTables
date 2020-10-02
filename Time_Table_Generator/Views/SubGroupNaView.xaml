@@ -20,18 +20,7 @@
         <Label Content="Day" HorizontalAlignment="Left" Margin="448,165,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483"/>
         <Label Content="Start Time" HorizontalAlignment="Left" Margin="448,225,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483"/>
         <Label Content="End Time" HorizontalAlignment="Left" Margin="448,291,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF213483"/>
-        <ComboBox x:Name="subgroup_combobx" HorizontalAlignment="Left" Margin="755,108,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="subgroup_combobx_SelectionChanged">
-            <ComboBoxItem>1.1</ComboBoxItem>
-            <ComboBoxItem>1.2</ComboBoxItem>
-            <ComboBoxItem>2.1</ComboBoxItem>
-            <ComboBoxItem>2.2</ComboBoxItem>
-            <ComboBoxItem>3.1</ComboBoxItem>
-            <ComboBoxItem>3.2</ComboBoxItem>
-            <ComboBoxItem>4.1</ComboBoxItem>
-            <ComboBoxItem>4.2</ComboBoxItem>
-            <ComboBoxItem>5.1</ComboBoxItem>
-            <ComboBoxItem>5.2</ComboBoxItem>
-        </ComboBox>
+        <ComboBox x:Name="subgroup_combobx" HorizontalAlignment="Left" Margin="755,108,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="subgroup_combobx_SelectionChanged"  DisplayMemberPath="SubGroupId"/>
         <ComboBox x:Name="day_combobx" HorizontalAlignment="Left" Margin="755,168,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="day_combobx_SelectionChanged">
             <ComboBoxItem>Sunday</ComboBoxItem>
             <ComboBoxItem>Monday</ComboBoxItem>

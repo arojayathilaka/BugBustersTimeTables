@@ -28,6 +28,7 @@ namespace Time_Table_Generator.Views
     {
 
         SubGroupNAViewModel subGroupNAViewModel;
+        Student_SubGroupViewModel Student_SubGroupViewModel;
         SubGroupNAEntity subGroupNAEntity;
 
         List<SubGroupNAEntity> subGroupNAs;
@@ -39,7 +40,9 @@ namespace Time_Table_Generator.Views
         private void SubGroup_NA_Page_loaded(object sender, RoutedEventArgs e)
         {
             subGroupNAViewModel = new SubGroupNAViewModel();
+            Student_SubGroupViewModel = new Student_SubGroupViewModel();
             subGroupNAs = subGroupNAViewModel.LoadSubGroupNAData();
+            subgroup_combobx.ItemsSource = Student_SubGroupViewModel.LoadStudentData();
         }
 
         private void add_btn__Click(object sender, RoutedEventArgs e)

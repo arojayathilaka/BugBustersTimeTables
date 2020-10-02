@@ -32,6 +32,7 @@ namespace Time_Table_Generator.Views
         Student_GroupView student_GroupViewModel;
         Student_GroupEntity student_GroupEntity;
         List<GroupNAEntity> groupNAs;
+        Student_GroupViewModel Student_GroupViewModel;
 
         public GroupNAView()
         {
@@ -40,7 +41,9 @@ namespace Time_Table_Generator.Views
         private void Group_NA_Page_loaded(object sender, RoutedEventArgs e)
         {
             groupNAViewModel = new GroupNAViewModel();
+            Student_GroupViewModel = new Student_GroupViewModel();
             groupNAs = groupNAViewModel.LoadGroupNAData();
+            group_combobx.ItemsSource = Student_GroupViewModel.LoadStudentData();
         }
 
         private void add_btn__Click(object sender, RoutedEventArgs e)
