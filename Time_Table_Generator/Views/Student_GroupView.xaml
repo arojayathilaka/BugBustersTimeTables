@@ -1,0 +1,80 @@
+﻿<Page x:Class="Time_Table_Generator.Views.Student_GroupView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Time_Table_Generator.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1100"
+      Title="Student_GroupView" Loaded="Student_Group_Page_loaded">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFF8900" Offset="0"/>
+                <GradientStop Color="White" Offset="0.178"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="groupId_txtbx" HorizontalAlignment="Left" Height="23" Margin="456,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.014,0.252" TextChanged="groupId_txtbx_SelectionChanged" />
+        <ComboBox x:Name="academicYrSem_combobx" HorizontalAlignment="Left" Margin="456,44,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="academicYrSem_combobx_TextChanged">
+            <ComboBoxItem>Y1.S1</ComboBoxItem>
+            <ComboBoxItem>Y1.S2</ComboBoxItem>
+            <ComboBoxItem>Y2.S1</ComboBoxItem>
+            <ComboBoxItem>Y2.S2</ComboBoxItem>
+            <ComboBoxItem>Y3.S1</ComboBoxItem>
+            <ComboBoxItem>Y3.S2</ComboBoxItem>
+            <ComboBoxItem>Y4.S1</ComboBoxItem>
+            <ComboBoxItem>Y4.S2</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="programme_combobx" HorizontalAlignment="Left" Margin="456,94,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="programme_combobx_SelectionChanged" >
+            <ComboBoxItem>IT</ComboBoxItem>
+            <ComboBoxItem>SE</ComboBoxItem>
+            <ComboBoxItem>CSSE</ComboBoxItem>
+            <ComboBoxItem>CSE</ComboBoxItem>
+            <ComboBoxItem>IM</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="groupNumber_combobx" HorizontalAlignment="Left" Margin="456,144,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="groupNumber_combobx_SelectionChanged">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem>6</ComboBoxItem>
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>9</ComboBoxItem>
+        </ComboBox>
+        <Grid HorizontalAlignment="Left" Height="862" Margin="0,0,0,-0.4" VerticalAlignment="Top" Width="249" Background="#FF0E0E32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="58*"/>
+                <RowDefinition Height="163*"/>
+                <RowDefinition Height="641*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="group_btn" Content="Add Group" HorizontalAlignment="Left" Margin="10,75.4,0,0" VerticalAlignment="Top" Width="229" Height="56" Click="group_btn_Click" Foreground="White" FontWeight="Bold" FontSize="22" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                        <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Button x:Name="sub_group_btn" Content="Add Sub-Group" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="229" Height="56" Click="sub_group_btn_Click" Foreground="White" FontWeight="Bold" FontSize="22">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC54A62" Offset="0.013"/>
+                    <GradientStop Color="#FFEA7798" Offset="0.505"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="add_btn_" Content="Add" HorizontalAlignment="Left" Margin="276,388,0,0" VerticalAlignment="Top" Width="75" Click="add_btn__Click"/>
+        <Button x:Name="update_btn_" Content="Update" HorizontalAlignment="Left" Margin="366,388,0,0" VerticalAlignment="Top" Width="75" Click="update_btn__Click"/>
+        <Button x:Name="delete_btn_" Content="Delete" HorizontalAlignment="Left" Margin="456,388,0,0" VerticalAlignment="Top" Width="75" Click="delete_btn__Click"/>
+        <Button x:Name="clear_all_btn_" Content="Clear" HorizontalAlignment="Left" Margin="546,388,0,0" VerticalAlignment="Top" Width="75" Click="clear_all_btn__Click"/>
+        <Label Content="Academic Year &amp; Semester :" HorizontalAlignment="Left" Margin="276,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Programme : " HorizontalAlignment="Left" Margin="276,91,0,0" VerticalAlignment="Top"/>
+        <Label Content="Group Number :" HorizontalAlignment="Left" Margin="276,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.083,0.266"/>
+        <Label Content="Group ID : " HorizontalAlignment="Left" Margin="276,191,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="student_group_data_grid" HorizontalAlignment="Left" Height="273" Margin="668,41,0,0" VerticalAlignment="Top" Width="400" SelectionChanged="student_group_data_grid_SelectionChanged" />
+    </Grid>
+</Page>
