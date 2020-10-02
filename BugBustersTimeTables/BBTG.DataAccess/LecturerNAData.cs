@@ -11,10 +11,9 @@ using System.Windows;
 
 namespace BBTG.DataAccess
 {
-    public class ParallelSessionData
+    public class LecturerNAData
     {
-
-        public List<ParallelSessionEntity> LoadData()
+        public List<LecturerNAEntity> LoadData()
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -24,24 +23,25 @@ namespace BBTG.DataAccess
                     sb.AppendLine("SELECT");
                     sb.AppendLine("*");
                     sb.AppendLine("FROM");
-                    sb.AppendLine("ParallelSession");
+                    sb.AppendLine("LecturerNA");
 
-                    return con.Query<ParallelSessionEntity>(sb.ToString(), new DynamicParameters()).ToList();
+                    return con.Query<LecturerNAEntity>(sb.ToString(), new DynamicParameters()).ToList();
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
-                    return new List<ParallelSessionEntity>();
+                    return new List<LecturerNAEntity>();
                 }
             }
         }
-        public void UpdateData(ParallelSessionEntity parallelSession)
+
+        public void UpdateData(LecturerNAEntity LecturerNA)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("UPDATE ParallelSession SET Ses1=@Ses1, Ses2=@Ses2, Day=@Day, STime=@STime, ETime=@ETime WHERE ParallelSessionId=@ParallelSessionId", parallelSession);
+                    con.Execute("UPDATE LecturerNA SET Lecturer=@Lecturer, Day=@Day, STime=@STime, ETime=@ETime WHERE LecturerId=@LecturerId", LecturerNA);
                 }
                 catch (Exception e)
                 {
@@ -50,13 +50,13 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void SaveData(ParallelSessionEntity parallelSession)
+        public void SaveData(LecturerNAEntity LecturerNA)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("INSERT INTO ParallelSession (ParallelSessionId, Ses1, Ses2, Day, STime, ETime) values (@ParallelSessionId, @Ses1, @Ses2, @Day, @STime, @ETime)", parallelSession);
+                    con.Execute("INSERT INTO LecturerNA (LecturerId, Lecturer, Day, STime, ETime) values (@LecturerId, @Lecturer, @Day, @STime, @ETime)", LecturerNA);
                 }
                 catch (Exception e)
                 {
@@ -65,13 +65,13 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void DeleteData(int ParallelSessionId)
+        public void DeleteData(int LecturerId)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("DELETE FROM ParallelSession WHERE ParallelSessionId=" + ParallelSessionId);
+                    con.Execute("DELETE FROM LecturerNA WHERE LecturerId=" + LecturerId);
                 }
                 catch (Exception e)
                 {
@@ -79,6 +79,5 @@ namespace BBTG.DataAccess
                 }
             }
         }
-
     }
 }

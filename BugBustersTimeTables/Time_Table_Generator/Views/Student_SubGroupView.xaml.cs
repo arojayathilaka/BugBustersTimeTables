@@ -260,7 +260,14 @@ namespace Time_Table_Generator.View
 
         private void group_btn_Click(object sender, RoutedEventArgs e)
         {
+            Student_GroupView studentView = new Student_GroupView();
+            this.NavigationService.Navigate(studentView);
+        }
 
+        private void sub_group_btn_Click(object sender, RoutedEventArgs e)
+        {
+            StudentView studentView = new StudentView();
+            this.NavigationService.Navigate(studentView);
         }
     }
 }

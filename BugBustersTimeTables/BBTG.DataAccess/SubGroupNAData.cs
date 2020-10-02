@@ -11,10 +11,9 @@ using System.Windows;
 
 namespace BBTG.DataAccess
 {
-    public class ParallelSessionData
+    public class SubGroupNAData
     {
-
-        public List<ParallelSessionEntity> LoadData()
+        public List<SubGroupNAEntity> LoadData()
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
@@ -24,24 +23,25 @@ namespace BBTG.DataAccess
                     sb.AppendLine("SELECT");
                     sb.AppendLine("*");
                     sb.AppendLine("FROM");
-                    sb.AppendLine("ParallelSession");
+                    sb.AppendLine("SubGroupNA");
 
-                    return con.Query<ParallelSessionEntity>(sb.ToString(), new DynamicParameters()).ToList();
+                    return con.Query<SubGroupNAEntity>(sb.ToString(), new DynamicParameters()).ToList();
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
-                    return new List<ParallelSessionEntity>();
+                    return new List<SubGroupNAEntity>();
                 }
             }
         }
-        public void UpdateData(ParallelSessionEntity parallelSession)
+
+        public void UpdateData(SubGroupNAEntity SubGroupNA)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("UPDATE ParallelSession SET Ses1=@Ses1, Ses2=@Ses2, Day=@Day, STime=@STime, ETime=@ETime WHERE ParallelSessionId=@ParallelSessionId", parallelSession);
+                    con.Execute("UPDATE SubGroupNA SET SubGroupNumber=@SubGroupNumber, Day=@Day, STime=@STime, ETime=@ETime WHERE SubGroupId=@SubGroupId", SubGroupNA);
                 }
                 catch (Exception e)
                 {
@@ -50,13 +50,13 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void SaveData(ParallelSessionEntity parallelSession)
+        public void SaveData(SubGroupNAEntity SubGroupNA)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("INSERT INTO ParallelSession (ParallelSessionId, Ses1, Ses2, Day, STime, ETime) values (@ParallelSessionId, @Ses1, @Ses2, @Day, @STime, @ETime)", parallelSession);
+                    con.Execute("INSERT INTO SubGroupNA (SubGroupId, SubGroupNumber, Day, STime, ETime) values (@SubGroupId, @SubGroupNumber, @Day, @STime, @ETime)", SubGroupNA);
                 }
                 catch (Exception e)
                 {
@@ -65,13 +65,13 @@ namespace BBTG.DataAccess
             }
         }
 
-        public void DeleteData(int ParallelSessionId)
+        public void DeleteData(int SubGroupId)
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
                 try
                 {
-                    con.Execute("DELETE FROM ParallelSession WHERE ParallelSessionId=" + ParallelSessionId);
+                    con.Execute("DELETE FROM SubGroupNA WHERE SubGroupId=" + SubGroupId);
                 }
                 catch (Exception e)
                 {
@@ -79,6 +79,5 @@ namespace BBTG.DataAccess
                 }
             }
         }
-
     }
 }

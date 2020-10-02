@@ -20,39 +20,38 @@ using Time_Table_Generator.ViewModel;
 namespace Time_Table_Generator.Views
 {
     /// <summary>
-    /// Interaction logic for ParallelSessionView.xaml
+    /// Interaction logic for ConsecutiveSessionView.xaml
     /// </summary>
-    public partial class ParallelSessionView : Page
+    public partial class ConsecutiveSessionView : Page
     {
 
-        ParallelSessionViewModel parallelSessionViewModel;
-        ParallelSessionEntity parallelSessionEntity;
-
+        ConsecutiveSessionViewModel consecutiveSessionViewModel;
+        ConsecutiveSessionEntity consecutiveSessionEntity;
         SessionViewModel sessionViewModel;
         SessionEntity sessionEntity;
-        List<ParallelSessionEntity> parallelSessions;
+        List<ConsecutiveSessionEntity> consecutiveSessions;
 
-        public ParallelSessionView()
+        public ConsecutiveSessionView()
         {
             InitializeComponent();
         }
 
-        private void Parallel_Session_Page_loaded(object sender, RoutedEventArgs e)
+        private void Consecutive_Session_Page_loaded(object sender, RoutedEventArgs e)
         {
-            parallelSessionViewModel = new ParallelSessionViewModel();
+            consecutiveSessionViewModel = new ConsecutiveSessionViewModel();
             sessionViewModel = new SessionViewModel();
 
-            session1_combobx.ItemsSource = sessionViewModel.LoadSessionData();
-            session2_combobx.ItemsSource = sessionViewModel.LoadSessionData();
-            parallelSessions = parallelSessionViewModel.LoadParallelSessionData();
+            consecutive_session1_combobx.ItemsSource = sessionViewModel.LoadSessionData();
+            consecutive_session2_combobx.ItemsSource = sessionViewModel.LoadSessionData();
+            consecutiveSessions = consecutiveSessionViewModel.LoadConsecutiveSessionData();
         }
 
         private void add_btn__Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                parallelSessionEntity = CreateParellelSessionEntity();
-                parallelSessionViewModel.SaveParallelSessionData(parallelSessionEntity);
+                consecutiveSessionEntity = CreateConsecutiveSessionEntity();
+                consecutiveSessionViewModel.SaveConsecutiveSessionData(consecutiveSessionEntity);
                 MessageBoxResult result = MessageBox.Show("Successfully Added!", "BBTG");
                 ClearAll();
             }
@@ -64,11 +63,8 @@ namespace Time_Table_Generator.Views
 
         public void ClearAll()
         {
-            session1_combobx.Text = "";
-            session2_combobx.Text = "";
-            day_combobx.Text = "";
-            starttime_combobx.Text = "";
-            endtime_combobx.Text = "";
+            consecutive_session1_combobx.Text = "";
+            consecutive_session2_combobx.Text = "";
         }
 
         private void sessionAdd_btn_Click(object sender, RoutedEventArgs e)
@@ -95,44 +91,26 @@ namespace Time_Table_Generator.Views
             this.NavigationService.Navigate(parallelSessionView);
         }
 
-        private ParallelSessionEntity CreateParellelSessionEntity()
-        {
-            int ParallelSessionId;
-            ParallelSessionId = parallelSessions.Last().ParallelSessionId + 1;
-
-            string Ses1 = session1_combobx.Text;
-            string Ses2 = session2_combobx.Text;
-            string Day = day_combobx.Text;
-            string STime = starttime_combobx.Text;
-            string ETime = endtime_combobx.Text;
-
-            parallelSessionEntity = new ParallelSessionEntity(ParallelSessionId, Ses1, Ses2, Day, STime, ETime);
-            return parallelSessionEntity;
-        }
-
-        private void session1_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void consecutive_session1_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void session2_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void consecutive_session2_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void day_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private ConsecutiveSessionEntity CreateConsecutiveSessionEntity()
         {
+            int ConsId;
+            ConsId = consecutiveSessions.Last().ConsId + 1;
 
-        }
+            string Ses1 = consecutive_session1_combobx.Text;
+            string Ses2 = consecutive_session2_combobx.Text;
 
-        private void starttime_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void endtime_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            consecutiveSessionEntity = new ConsecutiveSessionEntity(ConsId, Ses1, Ses2);
+            return consecutiveSessionEntity;
         }
     }
 }
