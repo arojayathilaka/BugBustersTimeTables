@@ -46,6 +46,7 @@ namespace Time_Table_Generator.View
         string tagName;
         bool isLecFilter = false;
         bool isSubFilter = false;
+        bool isFilterAdded = false;
 
         public SessionAddView()
         {
@@ -73,27 +74,7 @@ namespace Time_Table_Generator.View
 
         private void SetDataGrid()
         {
-            List<Session> sessionList = new List<Session>();
-            foreach (SessionEntity s in sessions)
-            {
-                string[] slctdLecsNames = new string[s.LecturerIdsArr.Length];
-                for (int i = 0; i < s.LecturerIdsArr.Length; i++)
-                {
-                    slctdLecsNames[i] = lecturers.Find(l => l.EmployeeId == s.LecturerIdsArr[i]).Name;
-                }
-
-                sessionList.Add(new Session
-                {
-                    Lecturers = string.Join(",", slctdLecsNames),
-                    SubjectName = s.SubjectName,
-                    SubjectCode = s.SubjectCode,
-                    Tag = s.Tag,
-                    GroupId = s.GroupId,
-                    Count = s.Count,
-                    Duration = s.Duration
-                });
-            }
-            session_data_grid.ItemsSource = sessionList;
+            session_data_grid.ItemsSource = _sessionViewModel.GetSessionList(sessions);
         }
 
         private void create_btn__Click(object sender, RoutedEventArgs e)
@@ -208,53 +189,63 @@ namespace Time_Table_Generator.View
 
         private void add_filter_btn_Click(object sender, RoutedEventArgs e)
         {
-            if(searchby_combobx.Text == "Lecturer")
+            isFilterAdded = true;
+            if (searchby_combobx.Text == "Lecturer")
             {
                 isLecFilter = true;
                 search_lec_val = search_combobx.Text;
             }
             else if (searchby_combobx.Text == "Subject")
             {
-                isSubFilter = true;
+                if (isLecFilter) isSubFilter = true;
             }
             MessageBox.Show("Filter Added", "BBTG", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void search_btn_Click(object sender, RoutedEventArgs e)
         {
-            int lecturerId;
-            if (isLecFilter && isSubFilter)
+            if (isFilterAdded)
             {
-                lecturerId = lecturers.Find(l => l.Name == search_lec_val).EmployeeId;
-                sessions = _sessionViewModel.LoadSessionDataByLecturer(lecturerId);
-                List<SessionEntity> lecSubFilteredList = new List<SessionEntity>();
-                lecSubFilteredList = sessions.FindAll(s => s.SubjectCode == search_combobx.Text);
-                sessions = lecSubFilteredList;
-                isLecFilter = false;
-                isSubFilter = false;
+                int lecturerId;
+                if (isLecFilter && isSubFilter)
+                {
+                    lecturerId = lecturers.Find(l => l.Name == search_lec_val).EmployeeId;
+                    sessions = _sessionViewModel.LoadSessionDataByLecturer(lecturerId);
+                    List<SessionEntity> lecSubFilteredList = new List<SessionEntity>();
+                    lecSubFilteredList = sessions.FindAll(s => s.SubjectCode == search_combobx.Text);
+                    sessions = lecSubFilteredList;
+                    isLecFilter = false;
+                    isSubFilter = false;
+                }
+                else if (searchby_combobx.Text == "Subject")
+                {
+                    sessions = _sessionViewModel.LoadSessionDataBySubject(search_combobx.Text);
+                }
+                else if (searchby_combobx.Text == "Group")
+                {
+                    sessions = _sessionViewModel.LoadSessionDataByGroup(search_combobx.Text);
+                }
+                else if (searchby_combobx.Text == "Sub Group")
+                {
+                    sessions = _sessionViewModel.LoadSessionDataBySubGroup(search_combobx.Text);
+                }
+                else if (searchby_combobx.Text == "Tag")
+                {
+                    sessions = _sessionViewModel.LoadSessionDataByTag(search_combobx.Text);
+                }
+                else if (searchby_combobx.Text == "Lecturer")
+                {
+                    lecturerId = lecturers.Find(l => l.Name == search_combobx.Text).EmployeeId;
+                    sessions = _sessionViewModel.LoadSessionDataByLecturer(lecturerId);
+                }
+                SetDataGrid();
+                isFilterAdded = false;
             }
-            else if(searchby_combobx.Text == "Subject")
+            else
             {
-                sessions = _sessionViewModel.LoadSessionDataBySubject(search_combobx.Text);
+                MessageBox.Show("Add filter first.", "BBTG", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            else if(searchby_combobx.Text == "Group")
-            {
-                sessions = _sessionViewModel.LoadSessionDataByGroup(search_combobx.Text);
-            }
-            else if (searchby_combobx.Text == "Sub Group")
-            {
-                sessions = _sessionViewModel.LoadSessionDataBySubGroup(search_combobx.Text);
-            }
-            else if (searchby_combobx.Text == "Tag")
-            {
-                sessions = _sessionViewModel.LoadSessionDataByTag(search_combobx.Text);
-            }
-            else if(searchby_combobx.Text == "Lecturer")
-            {
-                lecturerId = lecturers.Find(l => l.Name == search_combobx.Text).EmployeeId;
-                sessions = _sessionViewModel.LoadSessionDataByLecturer(lecturerId);
-            }
-            SetDataGrid();
+            
         }
 
         private void searchby_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)

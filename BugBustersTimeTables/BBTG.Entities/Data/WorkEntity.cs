@@ -30,5 +30,19 @@ namespace BBTG.Entities.Data
         {
 
         }
+
+
+
     }
+
+    public class TimeSlotEntity 
+    {
+        public int ID { get; set; }
+        public string Date { get; set; }
+        public string TImeSlot { get; set; }
+        public List<SessionEntity>  SessionEntity  { get; set; }
+    }
+        
+
+
 }
