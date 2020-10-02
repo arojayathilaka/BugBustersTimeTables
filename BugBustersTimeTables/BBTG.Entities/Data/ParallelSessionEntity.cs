@@ -11,26 +11,29 @@ namespace BBTG.Entities.Data
 
         public int ParallelSessionId { get; set; }
 
-        public string Lecturer { get; set; }
+        public string Ses1 { get; set; }
 
-        public string GroupId { get; set; }
+        public string Ses2 { get; set; }
 
-        public string SubGroupId { get; set; }
+        public string Day { get; set; }
 
-        public string Session { get; set; }
+        public string STime { get; set; }
+
+        public string ETime { get; set; }
 
         public ParallelSessionEntity()
         {
 
         }
 
-        public ParallelSessionEntity(int ParallelSessionId, string Lecturer, string GroupId, string SubGroupId, string Session)
+        public ParallelSessionEntity(int ParallelSessionId, string Ses1, string Ses2, string Day, string STime, string ETime)
         {
             this.ParallelSessionId = ParallelSessionId;
-            this.Lecturer = Lecturer;
-            this.GroupId = GroupId;
-            this.SubGroupId = SubGroupId;
-            this.Session = Session;
+            this.Ses1 = Ses1;
+            this.Ses2 = Ses2;
+            this.Day = Day;
+            this.STime = STime;
+            this.ETime = ETime;
         }
     }
 }

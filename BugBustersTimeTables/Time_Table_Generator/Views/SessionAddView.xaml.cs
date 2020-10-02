@@ -362,6 +362,30 @@ namespace Time_Table_Generator.View
             isGrpIdSet = false;
         }
 
+        private void sessionAdd_btn_Click(object sender, RoutedEventArgs e)
+        {
+            SessionAddView sessionAddView = new SessionAddView();
+            this.NavigationService.Navigate(sessionAddView);
+        }
+
+        private void allocatna_btn_Click(object sender, RoutedEventArgs e)
+        {
+            AllocateNATimeView allocateNATimeView = new AllocateNATimeView();
+            this.NavigationService.Navigate(allocateNATimeView);
+        }
+
+        private void consecutivesession_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ConsecutiveSessionView consecutiveSessionView = new ConsecutiveSessionView();
+            this.NavigationService.Navigate(consecutiveSessionView);
+        }
+
+        private void parallelsession_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ParallelSessionView parallelSessionView = new ParallelSessionView();
+            this.NavigationService.Navigate(parallelSessionView);
+        }
+
         private void code_combobx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox subComboBx = sender as ComboBox;
