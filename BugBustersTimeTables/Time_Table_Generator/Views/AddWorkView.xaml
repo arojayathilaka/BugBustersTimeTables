@@ -54,6 +54,7 @@
         </DataGrid>
         <TextBox x:Name="time1" HorizontalAlignment="Left" Height="23" Margin="100,725,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="0"/>
         <TextBox x:Name="time2" HorizontalAlignment="Left" Height="23" Margin="100,766,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="0"/>
+        <TextBox x:Name="time3" HorizontalAlignment="Left" Height="23" Margin="100,766,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="0"/>
         <Label Content="Work ID:" HorizontalAlignment="Left" Margin="281,94,0,0" VerticalAlignment="Top" Width="228" Height="45" FontSize="16"/>
         <TextBox x:Name="workId_txt" HorizontalAlignment="Left" Height="52" Margin="455,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
         <Grid HorizontalAlignment="Left" Height="862" Margin="0,0,0,-0.4" VerticalAlignment="Top" Width="249" Background="#FF0E0E32">

@@ -31,4 +31,29 @@ namespace BBTG.Entities.Data
 
         }
     }
+
+    public class TimeSlotEntity
+    {
+        public int ID { get; set; }
+        public string Days { get; set; }
+        public string TimeSlots { get; set; }
+        public int SessionId { get; set; }
+
+
+        public TimeSlotEntity(int ID, string Day, string TimeSlot, int SessionId)
+        {
+            this.ID = ID;
+            this.Days = Day;
+            this.TimeSlots = TimeSlot;
+            this.SessionId = SessionId;
+        }
+
+        public TimeSlotEntity()
+        {
+
+        }
+
+    }
+
+
 }

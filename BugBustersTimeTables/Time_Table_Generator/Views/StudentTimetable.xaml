@@ -9,6 +9,37 @@
       Title="StudentTimetable">
 
     <Grid>
-        
+
+        <TextBlock HorizontalAlignment="Left" Margin="26,24,0,0" TextWrapping="Wrap" Text="Generate Student Time Table" VerticalAlignment="Top" Height="40" Width="253" FontSize="18" Foreground="#FF0C0646"/>
+        <Label Content="Time Table ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="57,69,0,0" Width="109" FontSize="16"/>
+        <TextBox x:Name="timeTable_Id_txt" HorizontalAlignment="Left" Height="38" Margin="166,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.345,0.746"/>
+        <Label Content="Batch Id:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="279,69,0,0" Width="129" FontSize="16"/>
+        <TextBox x:Name="batchId_txt" HorizontalAlignment="Left" Height="38" Margin="413,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366"/>
+        <TextBox x:Name="batchType_txt" HorizontalAlignment="Left" Height="38" Margin="166,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223" RenderTransformOrigin="0.345,0.746"/>
+        <Label Content="Batch Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,127,0,0" Width="109" FontSize="16"/>
+        <Button x:Name="GenerateStudent_btn" Content="Generate" HorizontalAlignment="Left" Margin="197,187,0,0" VerticalAlignment="Top" Width="169" Height="31" FontSize="16" Foreground="White" Click="GenerateStudent_btn_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0C8086" Offset="0"/>
+                    <GradientStop Color="#FF79E2E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="printLecturerTable_btn" Content="Print" HorizontalAlignment="Left" Margin="436,187,0,0" VerticalAlignment="Top" Width="169" Height="31" FontSize="16" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0C8616" Offset="0"/>
+                    <GradientStop Color="#FF57D76F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="student_timetable" HorizontalAlignment="Left" Height="199" Margin="67,241,0,0" VerticalAlignment="Top" Width="712">
+
+        </DataGrid>
+        <DataGrid x:Name="studentTable_grid" HorizontalAlignment="Left" Height="0" Margin="85,187,0,0" VerticalAlignment="Top" Width="0">
+            <DataGrid.Columns>
+
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

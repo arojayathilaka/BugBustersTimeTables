@@ -25,16 +25,62 @@ namespace Time_Table_Generator.Views
     {
         WorkViewModel _viewModel;
         WorkEntity workEntity;
+        TimeSlotEntity timeSlotEntity;
+        TimeSlotViewModel _timeSlotViewModel;
+        WorkViewModel _workViewModel;
 
         ArrayList getstartTimes = new ArrayList();
         ArrayList getendTimes = new ArrayList();
+        ArrayList getfullTimes = new ArrayList();
 
         String startTimes = "";
         String endTimes = "";
+        String fullTimes = "";
+        public List<TimeSlotEntity> _timeSlotEntities;
+
         public AddWorkView()
         {
             InitializeComponent();
             _viewModel = new WorkViewModel();
+            _timeSlotViewModel = new TimeSlotViewModel();
+            var x =_viewModel.LoadData();
+            /*string[] days = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri" };
+            //for (int i = 0; i < days.Length; i++)
+            //{
+            //    days[i] = 
+            //}
+
+
+            //For day : - 9 ? 
+            // # of days : - 5 ? 
+            // TOT = 9*5 = 45
+            _timeSlotEntities = new List<TimeSlotEntity>();
+            int startTime = 8;
+            int currentDate = 0;
+            int endTime = 17;
+            for (int i = 1; i < 46; i++)
+            {
+                if (startTime == endTime)
+                {
+                    startTime = 8;
+                    currentDate++;
+                }
+
+                _timeSlotEntities.Add(
+                    new TimeSlotEntity { ID = i, TimeSlot = $"{startTime}-{++startTime}", Day = days[currentDate] }
+                    );
+            }
+
+            //timeSlotEntity = new TimeSlotEntity(2, "8-9", "tue");
+            //_timeSlotViewModel.SaveTimeSlotsData(timeSlotEntity);
+
+            /*foreach (TimeSlotEntity t in _timeSlotEntities)
+            {
+                _timeSlotViewModel.SaveTimeSlotsData(t);
+            }*/
+
+            
+
         }
 
         public class TimeSlots
@@ -209,8 +255,18 @@ namespace Time_Table_Generator.Views
                         time2.AppendText(value2.ToString());
                         endTimes = time2.Text;
                     }
+
+                    string[] array3 = getfullTimes.ToArray(typeof(string)) as string[];
+                    foreach (string value3 in array3)
+                    {
+                        time3.AppendText(value3.ToString());
+                        fullTimes = time3.Text;
+                    }
+
                     workEntity = new WorkEntity(int.Parse(workId_txt.Text), batch, int.Parse(workdays_no_txtbx.Text), workingDays, int.Parse(workinghr_no_txtbx.Text), startTimes, endTimes);
                     _viewModel.SaveData(workEntity);
+
+                    
 
                     clear();
 
@@ -237,11 +293,13 @@ namespace Time_Table_Generator.Views
 
             String startTime = timeslots_txtbx1.Text;
             String endTime = timeslots_txtbx2.Text;
+            String fullTime = startTime +" - "+ endTime;
 
             timeSlots_grid.Items.Add(ts);
 
-            getstartTimes.Add(startTime);
-            getendTimes.Add(endTime);
+            getstartTimes.Add(startTime+",");
+            getendTimes.Add(endTime+",");
+            getfullTimes.Add(fullTime);
 
             timeslots_txtbx1.Clear();
             timeslots_txtbx2.Clear();
@@ -265,8 +323,8 @@ namespace Time_Table_Generator.Views
         private void timetable_view_click(object sender, RoutedEventArgs e)
         {
 
-            LecturerTimetable timetableView = new LecturerTimetable();
-            this.NavigationService.Navigate(timetableView);
+            TimetablesCategories timetablesCategories = new TimetablesCategories();
+            this.NavigationService.Navigate(timetablesCategories);
 
         }
 

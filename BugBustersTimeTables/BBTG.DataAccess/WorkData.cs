@@ -36,7 +36,38 @@ namespace BBTG.DataAccess
         {
             using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
             {
-                return con.Query<WorkEntity>("SELECT WorkingDays, TimeSlotStartTime, TimeSlotEndTime FROM WorkTable WHERE ID =" + ID, new DynamicParameters()).ToList();
+                return con.Query<WorkEntity>("SELECT * FROM WorkTable WHERE ID =" + ID, new DynamicParameters()).ToList();
+            }
+        }
+
+        public void AddTimeSlots(TimeSlotEntity timeSlots)
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                con.Execute("INSERT INTO TimeSlotTable (ID, Days, TimeSlots, SessionId) values (@ID, @Days, @TimeSlots, @SessionId)", timeSlots);
+            }
+        }
+
+        public void DeleteTimeSlotData()
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                try
+                {
+                    con.Execute("DELETE FROM TimeSlotTable ");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        public List<TimeSlotEntity> LoadTimeSlotData()
+        {
+            using (IDbConnection con = new SQLiteConnection(AppData.ConnectionString))
+            {
+                return con.Query<TimeSlotEntity>("SELECT * FROM TimeSlotTable", new DynamicParameters()).ToList();
             }
         }
 

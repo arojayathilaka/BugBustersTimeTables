@@ -41,4 +41,31 @@ namespace Time_Table_Generator.ViewModel
             _workData.UpdateData(work);
         }
     }
+
+    public class TimeSlotViewModel
+    {
+        WorkData _workData;
+
+        public TimeSlotViewModel()
+        {
+            _workData = new WorkData();
+        }
+
+        public void SaveTimeSlotsData(TimeSlotEntity timeSlotEntity)
+        {
+            _workData.AddTimeSlots(timeSlotEntity);
+        }
+
+        public List<TimeSlotEntity> LoadTimeSlotData()
+        {
+            //var x = AppData._timeSlotEntities;
+            return _workData.LoadTimeSlotData();
+        }
+
+        public void DeleteTimeData()
+        {
+            _workData.DeleteTimeSlotData();
+        }
+
+    }
 }
