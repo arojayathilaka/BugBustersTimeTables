@@ -72,5 +72,9 @@ namespace Time_Table_Generator
             Main.Content = new SessionAddView();
         }
 
+        private void time_table_cat_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new TimetablesCategories();
+        }
     }
 }

@@ -61,7 +61,7 @@
                     <ImageBrush ImageSource="Images/session.jpg"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="sessio_btn" Content="Sessions" MinWidth="80" Click="session_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
+            <Button x:Name="timetable_cat_btn" Content="Sessions" MinWidth="80" Click="time_table_cat_btn_Click" FontFamily="Sigmar One" Foreground="#FF213483">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/session.jpg"/>
                 </Button.Background>

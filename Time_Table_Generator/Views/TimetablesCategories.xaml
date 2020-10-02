@@ -1,0 +1,39 @@
+﻿<Page x:Class="Time_Table_Generator.Views.TimetablesCategories"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Time_Table_Generator.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TimetablesCategories">
+
+    <Grid Margin="0,0,-488,-264.4">
+        <TextBlock HorizontalAlignment="Left" Margin="133,123,0,0" TextWrapping="Wrap" Text="Select Timetable Category" VerticalAlignment="Top" Height="50" Width="480" FontSize="36" Foreground="#FF0C305D"/>
+        <Button Content="Lecturer Timetable" HorizontalAlignment="Left" Margin="446,270,0,0" VerticalAlignment="Top" Width="453" Height="70" FontSize="22" Foreground="White" Click="Button_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3D9109" Offset="0"/>
+                    <GradientStop Color="#FFA4D0A0" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Student Timetable" HorizontalAlignment="Left" Margin="446,416,0,0" VerticalAlignment="Top" Width="453" Height="70" FontSize="22" Foreground="White" Click="Button_Click_1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF076577" Offset="0"/>
+                    <GradientStop Color="#FFA0C3D0" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Room Timetable" HorizontalAlignment="Left" Margin="446,557,0,0" VerticalAlignment="Top" Width="453" Height="70" FontSize="22" Foreground="White" Click="Button_Click_2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF780991" Offset="0"/>
+                    <GradientStop Color="#FFC2B4CE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Page>

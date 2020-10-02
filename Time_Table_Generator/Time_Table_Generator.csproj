@@ -194,6 +194,9 @@
     <Compile Include="Views\PrefferedRoomForSessionView.xaml.cs">
       <DependentUpon>PrefferedRoomForSessionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TimetablesCategories.xaml.cs">
+      <DependentUpon>TimetablesCategories.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -238,15 +241,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RoomTimetable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SessionNAView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	<Page Include="Views\RoomTimetable.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    
     <Page Include="Views\StudentTimetable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
